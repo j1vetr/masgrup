@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Mas Grup"
+version = "1.0.0"
+id = "artifacts/mas-grup"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24587
+
+[services.development]
+run = "pnpm --filter @workspace/mas-grup run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mas-grup", "run", "build" ]
+publicDir = "artifacts/mas-grup/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24587"
+BASE_PATH = "/"

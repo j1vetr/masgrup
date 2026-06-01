@@ -1,74 +1,192 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight } from "lucide-react";
+import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import ana2 from "@assets/ana2_1780314877331.jpeg";
+import ana1 from "@assets/ana1_1780316658706.jpeg";
 import ana3 from "@assets/ana3_1780314877331.jpeg";
 import ana4 from "@assets/ana4_1780314877331.jpeg";
+import ana5 from "@assets/ana5_1780314877332.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
 
 export default function HomePage() {
   return (
     <div className="w-full">
+
       {/* HERO SECTION */}
-      <section className="relative min-h-[100dvh] flex items-center pt-20">
-        <div 
+      <section className="relative bg-primary" style={{ paddingTop: 52 }}>
+        <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${ana2})` }}
+          style={{ backgroundImage: `url(${ana1})` }}
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/95 via-primary/65 to-primary/15" />
-        
-        <div className="container relative z-10 mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/93 via-primary/68 to-primary/12" />
+
+        <div className="container relative z-10 mx-auto px-4 md:px-8 py-14 md:py-20">
+          <div className="max-w-[420px]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.7 }}
             >
-              <div className="text-accent text-sm md:text-base font-bold tracking-[0.2em] mb-6">
-                PROFESYONELLİK · GÜVENİLİRLİK · KALİTE
-              </div>
-              <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-6">
-                Profesyonel Temizlik Hizmetleri
+              <h1 className="font-black leading-[1.18] mb-4" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
+                <span className="text-white block">Eğitimli Ekip.</span>
+                <span className="text-white block">Premium Hizmet.</span>
+                <span className="text-accent block">Kurumsal Güven.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 italic font-light mb-8">
-                "Temiz alanlar, güçlü yarınlar."
+              <p className="text-white/85 text-sm leading-relaxed mb-7" style={{ maxWidth: 280 }}>
+                Mas Grup, yaşam alanlarınızı ve iş yerlerinizi en yüksek hijyen standartlarında buluşturur.
               </p>
-              <p className="text-lg text-white/85 mb-10 max-w-2xl leading-relaxed">
-                Mas Grup, yaşam ve çalışma alanlarınızda yalnızca temizlik değil, detay odaklı, sistemli ve güvenilir çözümler sunar.
-              </p>
-              
-              <div className="flex flex-wrap gap-4 mb-16">
+              <div className="flex flex-wrap gap-3">
                 <Link href="/hizmetlerimiz">
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-white h-14 px-8 text-base">
-                    Hizmetlerimiz
+                  <Button className="bg-accent hover:bg-accent/90 text-white font-bold tracking-wide text-sm px-5 h-10">
+                    HİZMETLERİMİZ <ChevronRight className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </Link>
                 <Link href="/hakkimizda">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8 text-base">
-                    Bizi Tanıyın
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 font-bold tracking-wide text-sm px-5 h-10">
+                    BİZİ TANIYIN <ChevronRight className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </Link>
               </div>
-
-              <div className="flex flex-wrap items-center gap-6 text-sm text-white/90 font-medium">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-accent" />
-                  <span>500+ Mutlu Müşteri</span>
-                </div>
-                <div className="w-px h-4 bg-white/20 hidden sm:block" />
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-accent" />
-                  <span>10+ Yıl Deneyim</span>
-                </div>
-                <div className="w-px h-4 bg-white/20 hidden sm:block" />
-                <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-accent" />
-                  <span>ISO Sertifikalı</span>
-                </div>
-              </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3-PANEL SECTION */}
+      <section className="grid lg:grid-cols-3 min-h-[42vh]">
+
+        {/* Panel 01 */}
+        <div className="relative overflow-hidden group">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            style={{ backgroundImage: `url(${ana3})` }}
+          />
+          <div className="absolute inset-0 bg-primary/85" />
+          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-accent text-sm font-bold tracking-widest">01</span>
+                <div className="flex-1 h-px bg-accent/40" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold leading-snug mb-4">
+                <span className="text-white">Profesyonel Çözümler,</span>
+                <br />
+                <span className="text-accent">Güçlü Sonuçlar.</span>
+              </h2>
+              <p className="text-white/70 text-sm leading-relaxed">
+                İleri teknoloji ekipmanlarımız ve uzman kadromuzla, beklentilerin üzerinde hizmet sunuyoruz.
+              </p>
+            </div>
+            <div className="flex gap-6 mt-8">
+              {[
+                { icon: Users, label: "Profesyonel Ekip" },
+                { icon: Star, label: "Kalite Standardı" },
+                { icon: Clock, label: "Zamanında Hizmet" },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center gap-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-white/60 text-[10px] font-medium leading-tight">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Panel 02 */}
+        <div className="relative overflow-hidden group border-l border-r border-white/10">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            style={{ backgroundImage: `url(${ana4})` }}
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-accent text-sm font-bold tracking-widest">02</span>
+                <div className="flex-1 h-px bg-accent/40" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold leading-snug mb-4">
+                <span className="text-white">Mas Akademi ile</span>
+                <br />
+                <span className="text-accent">Fark Yaratıyoruz.</span>
+              </h2>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Eğitimli, bilinçli ve donanımlı ekipler yetiştiriyor; sektöre değer katıyoruz.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Link href="/akademi">
+                <Button className="bg-accent hover:bg-accent/90 text-white font-bold tracking-wide text-sm">
+                  AKADEMİMİZ <ChevronRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Panel 03 */}
+        <div className="relative overflow-hidden group">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            style={{ backgroundImage: `url(${ana5})` }}
+          />
+          <div className="absolute inset-0 bg-primary/82" />
+          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-accent text-sm font-bold tracking-widest">03</span>
+                <div className="flex-1 h-px bg-accent/40" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold leading-snug mb-4">
+                <span className="text-white">Yaşam Alanlarınıza</span>
+                <br />
+                <span className="text-accent">Değer Katıyoruz.</span>
+              </h2>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Hijyenik, sağlıklı ve konforlu alanlar için en doğru adres.
+              </p>
+            </div>
+            <div className="flex gap-6 mt-8">
+              {[
+                { icon: Droplets, label: "Hijyen" },
+                { icon: Shield, label: "Güven" },
+                { icon: Smile, label: "Memnuniyet" },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center gap-2 text-center">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <span className="text-white/60 text-[10px] font-medium leading-tight">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* REFERENCE BRANDS STRIP */}
+      <section className="py-8 bg-white border-t border-primary/8">
+        <div className="container mx-auto px-4 md:px-8">
+          <p className="text-center text-xs font-bold tracking-[0.18em] text-primary/50 uppercase mb-6">
+            Güvenilir Hizmet Anlayışımızı Tercih Eden Markalar
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {[
+              { icon: Home, label: "Villa\nProjeleri" },
+              { icon: Building2, label: "Plaza\nResidence" },
+              { icon: Sparkles, label: "Luxury\nLiving" },
+              { icon: HardHat, label: "Corporate\nOffices" },
+              { icon: CheckCircle, label: "Premium\nServices" },
+            ].map((brand, i) => (
+              <div key={i} className="flex flex-col items-center gap-2 text-center opacity-50 hover:opacity-100 transition-opacity cursor-default">
+                <brand.icon className="w-7 h-7 text-primary" />
+                <span className="text-[10px] font-bold text-primary uppercase tracking-wider whitespace-pre-line leading-tight">{brand.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -82,13 +200,13 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <img 
-                src={ana3} 
-                alt="Mas Grup Kurumsal Çözümler" 
+              <img
+                src={ana3}
+                alt="Mas Grup Kurumsal Çözümler"
                 className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover"
               />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -183,7 +301,6 @@ export default function HomePage() {
 
           <div className="relative">
             <div className="absolute top-12 left-0 right-0 h-0.5 bg-white/10 hidden lg:block border-t-2 border-dashed border-accent/50" />
-            
             <div className="grid lg:grid-cols-5 gap-12 relative z-10">
               {[
                 { icon: Eye, title: "Gözlem", desc: "Alan değerlendirmesi yapılır" },
@@ -192,7 +309,7 @@ export default function HomePage() {
                 { icon: ZoomIn, title: "Detay", desc: "Her köşe kontrol edilir" },
                 { icon: CheckSquare, title: "Kontrol", desc: "Kalite onayı alınır" }
               ].map((step, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -211,10 +328,6 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-
-          <div className="mt-20 text-center">
-            <p className="italic text-white/70 text-lg">"Bu sistem sayesinde her müşterimize aynı kaliteyi sunarız."</p>
           </div>
         </div>
       </section>
@@ -264,9 +377,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img 
-                src={ana4} 
-                alt="Mas Akademi" 
+              <img
+                src={ana4}
+                alt="Mas Akademi"
                 className="rounded-2xl shadow-xl w-full"
               />
             </motion.div>
@@ -291,7 +404,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
                 <p>
-                  Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız. Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz. 
+                  Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız. Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz.
                 </p>
                 <p>
                   Bunu bir kampanya olarak değil, hayatımızın bir parçası olarak görüyoruz. Çünkü temiz bir gelecek, küçük adımlarla başlar.
@@ -306,7 +419,7 @@ export default function HomePage() {
       <section className="py-32 bg-primary relative overflow-hidden">
         <div className="absolute top-10 left-1/2 -translate-x-1/2 text-[20rem] text-accent/10 font-serif leading-none select-none">"</div>
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -320,14 +433,14 @@ export default function HomePage() {
                 Mas Grup olarak biz, temizlik hizmetini yalnızca bir iş olarak görmüyoruz. Bizim için her yaşam alanı, bir insanın hayatına dokunduğumuz yerdir.
               </p>
               <p>
-                Yaptığımız işin temelinde; güven, özen ve saygı vardır. Her detayı önemseriz. Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir. Bizim için temizlik, sadece görüneni düzeltmek değil, yaşam alanlarına huzur ve ferahlık katmaktır.
+                Yaptığımız işin temelinde; güven, özen ve saygı vardır. Her detayı önemseriz. Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir.
               </p>
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto text-left">
               <h3 className="text-2xl font-bold text-white mb-4">İnsan Odaklılık</h3>
               <p className="text-white/70">
-                Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz. Çünkü güçlü bir ekip, güçlü bir hizmet demektir.
+                Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz.
               </p>
             </div>
           </motion.div>

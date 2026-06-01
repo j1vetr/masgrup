@@ -1,20 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronRight, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [location] = useLocation();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { href: "/", label: "Ana Sayfa" },
@@ -26,20 +17,17 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-3">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-br-lg rounded-tl-lg">
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-            </div>
-            <span className={`font-black tracking-tight text-xl ${scrolled ? "text-primary" : "text-white"}`}>
-              MAS GRUP
-            </span>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 4 C10 4 4 10 4 18 C4 26 10 32 18 32" stroke="#00B4D8" strokeWidth="3" strokeLinecap="round" fill="none"/>
+              <path d="M18 4 L28 18 L18 32" stroke="#0D1B3E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M10 18 L28 10" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round"/>
+              <path d="M10 18 L28 26" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
+            <span className="font-black tracking-tight text-xl text-primary">MAS GRUP</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -47,31 +35,31 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors border-b-2 py-1 ${
+                className={`text-sm font-semibold transition-colors border-b-2 py-1 ${
                   location === link.href
                     ? "border-accent text-accent"
-                    : `border-transparent hover:text-accent ${scrolled ? "text-primary" : "text-white/90"}`
+                    : "border-transparent text-primary hover:text-accent"
                 }`}
               >
-                {link.label}
+                {link.label.toUpperCase()}
               </Link>
             ))}
           </nav>
 
           <div className="hidden lg:flex items-center gap-6">
-            <div className={`flex items-center gap-2 font-medium ${scrolled ? "text-primary" : "text-white"}`}>
+            <div className="flex items-center gap-2 font-medium text-primary">
               <Phone className="w-4 h-4 text-accent" />
-              <span>+90 532 123 45 67</span>
+              <span>0532 123 45 67</span>
             </div>
             <Link href="/iletisim">
-              <Button className="bg-accent hover:bg-accent/90 text-white border-0">
-                Teklif Al
+              <Button className="bg-accent hover:bg-accent/90 text-white border-0 font-bold tracking-wide">
+                TEKLİF AL
               </Button>
             </Link>
           </div>
 
           <button
-            className={`lg:hidden p-2 -mr-2 ${scrolled ? "text-primary" : "text-white"}`}
+            className="lg:hidden p-2 -mr-2 text-primary"
             onClick={() => setMobileMenuOpen(true)}
             data-testid="button-open-menu"
           >
@@ -80,16 +68,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-primary z-50 flex flex-col p-6 animate-in fade-in zoom-in-95 duration-200">
           <div className="flex justify-between items-center mb-12">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-br-lg rounded-tl-lg">
-                <ChevronRight className="w-5 h-5" />
-              </div>
-              <span className="font-black tracking-tight text-xl text-white">MAS GRUP</span>
-            </div>
+            <span className="font-black tracking-tight text-xl text-white">MAS GRUP</span>
             <button
               className="text-white p-2"
               onClick={() => setMobileMenuOpen(false)}
@@ -117,11 +99,11 @@ export default function Header() {
           <div className="mt-auto space-y-6">
             <div className="flex items-center gap-3 text-white/90">
               <Phone className="w-5 h-5 text-accent" />
-              <span className="text-lg">+90 532 123 45 67</span>
+              <span className="text-lg">0532 123 45 67</span>
             </div>
             <Link href="/iletisim" onClick={() => setMobileMenuOpen(false)}>
-              <Button className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg">
-                Teklif Al
+              <Button className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg font-bold">
+                TEKLİF AL
               </Button>
             </Link>
           </div>

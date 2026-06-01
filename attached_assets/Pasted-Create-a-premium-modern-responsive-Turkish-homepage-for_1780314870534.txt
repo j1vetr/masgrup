@@ -1,0 +1,285 @@
+Create a premium, modern, responsive Turkish homepage for a professional cleaning company called “Mas Grup”.
+
+IMPORTANT:
+- The website must feel real, premium, corporate, and trustworthy.
+- Do not make it look like a generic AI-generated template.
+- The design should be elegant, clean, high-end, and conversion-focused.
+- Use the uploaded reference images as the visual foundation of the homepage.
+- The texts will be written in HTML on top of the design where needed, not embedded into the images.
+- The site language must be fully Turkish.
+- The overall structure should reflect a premium service company, not a cheap cleaning landing page.
+- Keep the layout clean, balanced, spacious, and modern.
+- White background should be dominant in most sections.
+- Main brand colors: lacivert / navy blue tones, turquoise accent color for highlights, and white background.
+- Typography should be modern, clean, bold where needed, and very readable.
+- Use subtle premium animations only (fade-up, smooth hover, soft transitions). Avoid excessive flashy animations.
+
+DESIGN DIRECTION:
+- Premium corporate style
+- Clean grid system
+- Large sections with strong spacing
+- Strong visual hierarchy
+- Trust-building layout
+- Modern buttons
+- Smooth rounded corners where appropriate
+- Professional icon usage
+- Awwwards-level cleanliness, but still practical and business-focused
+- The website should feel like a premium service brand serving upscale residences and corporate spaces
+
+USE THE PROVIDED IMAGES LIKE THIS:
+- Use the premium cleaning team image as the main hero background or hero-side image
+- Use the glass office building image in a supporting section like “Neden Mas Grup?”
+- Use the Mas Akademi training image in the academy section
+- Use the plant / sustainability image in the social responsibility section
+- Use the service collage image or other service-related visuals in the services area
+- Use the interior / premium residence style visuals to strengthen the premium perception
+- Make sure all visuals are integrated naturally and elegantly
+
+BUILD ONLY THE HOMEPAGE FOR NOW.
+
+HEADER:
+Create a clean, premium top header with:
+- Logo area on the left: MAS GRUP
+- Navigation menu:
+  Ana Sayfa
+  Hakkımızda
+  Hizmetlerimiz
+  Akademi
+  Kurumsal
+  İletişim
+- On the right:
+  phone icon + phone number placeholder
+  a strong CTA button: “Teklif Al”
+- Header should be sticky on scroll
+- Desktop and mobile versions must be well-designed
+- Mobile menu should be elegant and usable
+
+SECTION 1 — HERO
+Create a strong first impression.
+Use a premium layout with text on one side and strong image focus.
+If helpful, use a dark navy gradient overlay to improve readability.
+
+Text content:
+Başlık:
+Profesyonel Temizlik Hizmetleri
+
+Alt slogan:
+Temiz alanlar, güçlü yarınlar.
+
+Açıklama:
+Mas Grup, yaşam ve çalışma alanlarınızda yalnızca temizlik değil,
+detay odaklı, sistemli ve güvenilir çözümler sunar.
+
+Buttons:
+- Hizmetlerimiz
+- Bizi Tanıyın
+
+Hero must feel premium and trustworthy.
+It should immediately communicate:
+- professionalism
+- premium quality
+- systematic service
+- trained team
+- corporate confidence
+
+SECTION 2 — NEDEN MAS GRUP?
+Section title:
+Neden Mas Grup?
+
+Section text:
+Mas Grup, standart temizlik anlayışının ötesinde bir hizmet sunar.
+Her süreç planlı, her detay kontrollüdür.
+
+Bullet items:
+- Sistemli temizlik yaklaşımı
+- Eğitimli ve denetimli ekip
+- Kalite kontrol süreci
+- Sürdürülebilir hizmet standardı
+
+Closing sentence:
+Bizim için temizlik, sadece görüneni değil, hissedileni değiştirmektir.
+
+Design idea:
+- Use a strong image + text layout
+- Or 4 premium icon cards
+- Make this section visually elegant and easy to scan
+- This area should strengthen trust
+
+SECTION 3 — HİZMETLERİMİZ
+Section title:
+Hizmetlerimiz
+
+Create premium service cards for 4 services:
+
+1. Ev Temizliği
+Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz.
+
+2. Ofis Temizliği
+Çalışma alanlarınızda verimliliği artıran düzenli ve profesyonel temizlik.
+
+3. İnşaat Sonrası Temizlik
+Zorlu alanlarda detaylı ve sistemli temizlik çözümleri.
+
+4. Detay Temizlik
+Gözden kaçan alanları standart haline getiren özel uygulamalar.
+
+Design notes:
+- Use elegant cards
+- Use subtle icons or cropped visuals
+- Cards should have hover effect
+- Keep them premium, not cartoonish
+- Make the section clear and well spaced
+
+SECTION 4 — NASIL ÇALIŞIYORUZ?
+Section title:
+Sistemli Temizlik Yaklaşımı
+
+Section text:
+Mas Grup’ta her hizmet belirli bir sistemle ilerler:
+
+Gözlem → Hazırlık → Temizlik → Detay → Kontrol
+
+Alt metin:
+Bu sistem sayesinde her müşterimize aynı kaliteyi sunarız.
+
+Design notes:
+- Create a clean visual step system / timeline / process flow
+- This should look structured and professional
+- Use icons or minimal line-based visuals
+- Emphasize the operational discipline of the company
+
+SECTION 5 — MAS AKADEMİ
+Section title:
+Mas Akademi
+
+Section text:
+Mas Grup bünyesinde yer alan Mas Akademi, tüm ekip üyelerinin
+profesyonel eğitim süreçlerinden geçtiği özel bir sistemdir.
+
+List:
+- Temizlik teknikleri
+- Detay odaklı çalışma
+- Müşteri iletişimi
+- Hizmet standardı
+
+Closing sentence:
+Güçlü ekip, kaliteli hizmetin temelidir.
+
+Design notes:
+- Use the training image provided
+- This section should feel like internal quality assurance and education
+- Make it visually premium and informative
+- Can be a two-column section with image + text
+
+SECTION 6 — SOSYAL SORUMLULUK
+Section title:
+Sadece Temizlik Değil, Değer Üretiyoruz
+
+Section text:
+Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız.
+
+Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz.
+
+Bunu bir kampanya olarak değil,
+hayatımızın bir parçası olarak görüyoruz.
+
+Çünkü temiz bir gelecek, küçük adımlarla başlar.
+
+Design notes:
+- Use the plant / sustainability image
+- Keep the visual tone calm, sincere, and elegant
+- This should not feel overly “marketing”, it should feel genuine
+
+SECTION 7 — DEĞERLER / MANİFESTO
+Create a premium manifesto / brand philosophy section.
+
+Section title:
+“Nasıl çalıştığımız değil, neden çalıştığımız önemlidir.”
+
+Main text:
+Mas Grup olarak biz, temizlik hizmetini yalnızca bir iş olarak görmüyoruz.
+Bizim için her yaşam alanı, bir insanın hayatına dokunduğumuz yerdir.
+
+Yaptığımız işin temelinde;
+güven, özen ve saygı vardır.
+
+Her detayı önemseriz.
+Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir.
+
+Bizim için temizlik, sadece görüneni düzeltmek değil,
+yaşam alanlarına huzur ve ferahlık katmaktır.
+
+Sub section:
+İnsan Odaklılık
+
+Text:
+Bizim için en büyük değer insandır.
+
+Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz.
+
+Çünkü güçlü bir ekip, güçlü bir hizmet demektir.
+
+Design notes:
+- This section should feel emotional but still corporate
+- Use elegant typography and whitespace
+- Could be displayed in a refined block or split layout
+- This is a brand-story section, not a simple text dump
+
+SECTION 8 — CTA
+Create a strong call-to-action section near the bottom.
+
+Suggested CTA title:
+Profesyonel temizlik hizmeti için bizimle iletişime geçin.
+
+Suggested supporting text:
+Mas Grup, yaşam ve çalışma alanlarınız için sistemli, güvenilir ve kaliteli çözümler sunar.
+
+Buttons:
+- Teklif Al
+- İletişime Geç
+
+This area should be clean, premium, and conversion-focused.
+
+FOOTER:
+Create a modern footer including:
+- Logo / company name
+- Short brand description
+- Navigation links
+- Contact placeholders
+- Social media placeholders if needed
+- Copyright
+
+UX / UI REQUIREMENTS:
+- Fully responsive
+- Desktop, tablet, mobile optimized
+- Strong spacing system
+- Consistent corner radius
+- Elegant shadows
+- Soft hover effects
+- Smooth scrolling
+- Clean section transitions
+- Accessible contrast
+- Fast-loading and organized structure
+
+TECHNICAL / IMPLEMENTATION REQUIREMENTS:
+- Build with a clean, maintainable component structure
+- Use reusable sections/components
+- Use a professional layout system
+- Make the content easy to edit later
+- Keep text content separated cleanly where possible
+- Optimize the design for real business use, not just visual demo
+- If using React or Next.js, structure the page neatly
+- If using Tailwind CSS, keep class usage organized and clean
+- Use the uploaded images meaningfully and responsively
+- Avoid unnecessary clutter
+
+CONTENT STYLE RULES:
+- All visible content must be in Turkish
+- Tone must be premium, confident, professional, and human
+- Avoid exaggerated, cheesy, or low-quality marketing language
+- Avoid a generic AI tone
+- Keep wording natural and high-end
+
+FINAL GOAL:
+Build a homepage that makes Mas Grup look like a premium, disciplined, trustworthy, and modern cleaning company serving both residential and corporate clients.
+The final result should feel polished, believable, and visually strong.

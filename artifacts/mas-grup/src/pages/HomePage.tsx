@@ -234,11 +234,6 @@ export default function HomePage() {
       {/* NEDEN MAS GRUP — full-bleed magazine split */}
       <section id="neden" className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
-        {/* Ghost number */}
-        <div className="absolute right-[42%] top-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
-          <span className="font-black text-white/[0.03] leading-none" style={{ fontSize: "clamp(160px, 22vw, 320px)" }}>04</span>
-        </div>
-
         {/* Full-bleed grid — LEFT content | RIGHT image edge-to-edge */}
         <div className="grid lg:grid-cols-[55%_45%] min-h-[90vh]">
 

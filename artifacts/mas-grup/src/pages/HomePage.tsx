@@ -26,7 +26,7 @@ export default function HomePage() {
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${ana1})` }}
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/97 via-primary/82 to-primary/28" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050d1a]/97 via-[#080f20]/82 to-[#0a1428]/28" />
 
         <div className="container relative z-10 mx-auto px-4 md:px-8 py-14 md:py-20">
           <div className="max-w-[420px]">

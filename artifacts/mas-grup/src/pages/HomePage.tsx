@@ -29,7 +29,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050d1a]/97 via-[#080f20]/82 to-[#0a1428]/28" />
 
-        <div className="container relative z-10 mx-auto px-4 md:px-8 py-14 md:py-20">
+        <div className="container relative z-10 mx-auto px-4 md:px-8 py-8 md:py-10">
           <div className="max-w-[420px]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function HomePage() {
       </section>
 
       {/* 3-PANEL SECTION */}
-      <section className="grid lg:grid-cols-3 min-h-[42vh]">
+      <section className="grid lg:grid-cols-3">
 
         {/* Panel 01 */}
         <div className="relative overflow-hidden group">
@@ -71,9 +71,9 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana3})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/91" />
-          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">01</span>
                 <div className="flex-1 h-px bg-accent/40" />
               </div>
@@ -110,9 +110,9 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana4})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/80" />
-          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">02</span>
                 <div className="flex-1 h-px bg-accent/40" />
               </div>
@@ -142,9 +142,9 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana5})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/82" />
-          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">03</span>
                 <div className="flex-1 h-px bg-accent/40" />
               </div>
@@ -194,9 +194,9 @@ export default function HomePage() {
             style={{ animation: "marquee 28s linear infinite" }}
           >
             {[
-              "Villa Projeleri", "Plaza Residence", "Luxury Living",
-              "Corporate Offices", "Premium Services", "Ofis Kompleksleri",
-              "Rezidans Projeleri", "Endüstriyel Tesisler",
+              "Konut Projeleri", "Kurumsal Ofisler", "Lüks Rezidanslar",
+              "Alışveriş Merkezleri", "Otel & Hospitality", "Sağlık Kuruluşları",
+              "Eğitim Kurumları", "Endüstriyel Tesisler",
             ].map((brand, i) => (
               <div key={i} className="flex items-center gap-0 shrink-0">
                 <span className="text-white/30 text-xs font-bold tracking-[0.18em] uppercase hover:text-accent transition-colors duration-300 cursor-default px-8 whitespace-nowrap">
@@ -207,9 +207,9 @@ export default function HomePage() {
             ))}
             {/* Duplicate for seamless loop */}
             {[
-              "Villa Projeleri", "Plaza Residence", "Luxury Living",
-              "Corporate Offices", "Premium Services", "Ofis Kompleksleri",
-              "Rezidans Projeleri", "Endüstriyel Tesisler",
+              "Konut Projeleri", "Kurumsal Ofisler", "Lüks Rezidanslar",
+              "Alışveriş Merkezleri", "Otel & Hospitality", "Sağlık Kuruluşları",
+              "Eğitim Kurumları", "Endüstriyel Tesisler",
             ].map((brand, i) => (
               <div key={`b${i}`} className="flex items-center gap-0 shrink-0">
                 <span className="text-white/30 text-xs font-bold tracking-[0.18em] uppercase hover:text-accent transition-colors duration-300 cursor-default px-8 whitespace-nowrap">

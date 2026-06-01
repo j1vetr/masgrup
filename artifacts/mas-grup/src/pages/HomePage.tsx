@@ -381,54 +381,27 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
 
-          {/* Editorial header — label left, title right */}
-          <div className="grid lg:grid-cols-[200px,1fr,auto] gap-10 items-end mb-20">
-            {/* Label column */}
+          {/* Centered header */}
+          <div className="text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col gap-3"
+              className="flex flex-col items-center gap-3 mb-6"
             >
-              <div className="w-8 h-0.5 bg-accent" />
-              <span className="text-accent/70 text-xs font-bold tracking-[0.3em] uppercase leading-snug">
-                Nasıl<br />Çalışıyoruz?
+              <div className="w-8 h-0.5 bg-accent mx-auto" />
+              <span className="text-accent/70 text-xs font-bold tracking-[0.3em] uppercase">
+                Nasıl Çalışıyoruz?
               </span>
             </motion.div>
-
-            {/* Title column */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-5xl md:text-7xl font-black leading-[1.0] tracking-tight"
             >
-              <h2 className="text-5xl md:text-7xl font-black leading-[1.0] tracking-tight">
-                Sistemli <span className="text-accent">Temizlik</span> Yaklaşımı
-              </h2>
-            </motion.div>
-
-            {/* Stats column */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-6"
-            >
-              <div className="text-center">
-                <p className="text-3xl font-black text-accent">5</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Adım</p>
-              </div>
-              <div className="w-px h-10 bg-white/10" />
-              <div className="text-center">
-                <p className="text-3xl font-black text-white">100%</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Kontrol</p>
-              </div>
-              <div className="w-px h-10 bg-white/10" />
-              <div className="text-center">
-                <p className="text-3xl font-black text-white">0</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Hata Payı</p>
-              </div>
-            </motion.div>
+              Sistemli <span className="text-accent">Temizlik</span> Yaklaşımı
+            </motion.h2>
           </div>
 
           {/* Steps panel */}

@@ -787,26 +787,6 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right: İnsan Odaklılık card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:mt-14"
-            >
-              <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-7 relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
-                <UserCircle2 className="absolute -bottom-4 -right-4 w-28 h-28 text-white/[0.04] pointer-events-none" />
-                <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/20 flex items-center justify-center text-accent mb-5">
-                  <UserCircle2 className="w-6 h-6" />
-                </div>
-                <div className="w-6 h-0.5 bg-accent mb-4" />
-                <h3 className="text-lg font-bold text-white mb-3">İnsan Odaklılık</h3>
-                <p className="text-white/50 text-sm leading-relaxed">
-                  Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz. Çünkü güçlü bir ekip, güçlü bir hizmet demektir.
-                </p>
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-              </div>
-            </motion.div>
 
           </div>
         </div>

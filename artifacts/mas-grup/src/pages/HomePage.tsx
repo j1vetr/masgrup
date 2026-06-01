@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import ana1 from "@assets/ana1_1780320498300.jpeg";
+import ana1 from "@assets/ana5_1780320877135.jpeg";
 import ana3 from "@assets/ana3_1780314877331.jpeg";
 import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";

@@ -359,7 +359,7 @@ export default function HomePage() {
       </section>
 
       {/* HİZMETLERİMİZ PREVIEW — full-width horizontal strip */}
-      <section className="relative overflow-hidden flex flex-col" style={{ background: "#07101f" }}>
+      <section className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
         {/* Header row */}
         <div className="px-6 md:px-12 pt-16 pb-8 text-center">
@@ -376,7 +376,7 @@ export default function HomePage() {
         </div>
 
         {/* 4-card horizontal grid — no gaps, edge-to-edge */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 flex-1">
+        <div className="grid grid-cols-2 lg:grid-cols-4">
           {[
             {
               num: "01", img: svcEv,      title: "Ev Temizliği",   tag: "Konut",
@@ -407,7 +407,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.08 }}
-              className="relative overflow-hidden cursor-pointer h-[420px] md:h-[500px] lg:h-full"
+              className="relative overflow-hidden cursor-pointer h-[420px] md:h-[500px]"
               style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : undefined }}
               onMouseEnter={() => setHoveredService(i)}
               onMouseLeave={() => setHoveredService(null)}

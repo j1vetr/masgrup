@@ -8,7 +8,7 @@ import ana3 from "@assets/ana3_1780314877331.jpeg";
 import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
-import nedenBg from "@assets/ChatGPT_Image_1_Haz_2026_15_47_36_1780318067645.png";
+import nedenBg from "@assets/ana3_1780318262914.jpeg";
 
 export default function HomePage() {
   return (

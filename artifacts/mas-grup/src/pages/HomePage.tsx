@@ -25,6 +25,13 @@ export default function HomePage() {
     return () => clearInterval(t);
   }, []);
 
+  const [activeService, setActiveService] = useState(0);
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  useEffect(() => {
+    const t = setInterval(() => setActiveService(s => (s + 1) % 4), 2200);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <div className="w-full">
 
@@ -390,30 +397,43 @@ export default function HomePage() {
               desc: "Gözden kaçan her noktada mükemmeliyetin standardı.",
               accent: "#00B4D8",
             },
-          ].map((svc, i) => (
+          ].map((svc, i) => {
+            const isActive = hoveredService === i || (hoveredService === null && activeService === i);
+            return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.08 }}
-              className="relative overflow-hidden group cursor-pointer h-[420px] md:h-[500px]"
+              className="relative overflow-hidden cursor-pointer h-[420px] md:h-[500px]"
               style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : undefined }}
+              onMouseEnter={() => setHoveredService(i)}
+              onMouseLeave={() => setHoveredService(null)}
             >
               <Link href="/hizmetlerimiz" className="block w-full h-full">
                 {/* Photo */}
                 <img
                   src={svc.img}
                   alt={svc.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
-                  style={{ transitionTimingFunction: "cubic-bezier(0.25,0.46,0.45,0.94)" }}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                  style={{
+                    transitionTimingFunction: "cubic-bezier(0.25,0.46,0.45,0.94)",
+                    transform: isActive ? "scale(1.08)" : "scale(1)",
+                  }}
                 />
 
                 {/* Base overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101f]/96 via-[#07101f]/45 to-[#07101f]/15 transition-opacity duration-500 group-hover:opacity-80" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-[#07101f]/96 via-[#07101f]/45 to-[#07101f]/15 transition-opacity duration-500"
+                  style={{ opacity: isActive ? 0.8 : 1 }}
+                />
 
-                {/* Hover accent sweep from bottom */}
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                {/* Accent sweep from bottom */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-1 bg-accent origin-left transition-transform duration-500"
+                  style={{ transform: isActive ? "scaleX(1)" : "scaleX(0)" }}
+                />
 
                 {/* Top: number + pill */}
                 <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
@@ -426,27 +446,46 @@ export default function HomePage() {
                 {/* Bottom content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   {/* Accent line */}
-                  <div className="w-5 h-px bg-accent mb-4 group-hover:w-10 transition-all duration-400" />
+                  <div
+                    className="h-px bg-accent mb-4 transition-all duration-400"
+                    style={{ width: isActive ? "2.5rem" : "1.25rem" }}
+                  />
 
-                  <h3 className="text-xl font-black text-white leading-tight mb-3 group-hover:text-accent transition-colors duration-300">
+                  <h3
+                    className="text-xl font-black leading-tight mb-3 transition-colors duration-300"
+                    style={{ color: isActive ? "#00B4D8" : "white" }}
+                  >
                     {svc.title}
                   </h3>
 
-                  {/* Description — hidden by default, slides up on hover */}
-                  <div className="overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500">
-                    <p className="text-white/55 text-xs leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  {/* Description — slides up when active */}
+                  <div
+                    className="overflow-hidden transition-all duration-500"
+                    style={{ maxHeight: isActive ? "5rem" : "0" }}
+                  >
+                    <p
+                      className="text-white/55 text-xs leading-relaxed mb-4 transition-opacity duration-500"
+                      style={{ opacity: isActive ? 1 : 0, transitionDelay: isActive ? "100ms" : "0ms" }}
+                    >
                       {svc.desc}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-white/30 text-[11px] font-bold tracking-wide group-hover:text-accent transition-colors duration-300">
+                  <div
+                    className="flex items-center gap-1.5 text-[11px] font-bold tracking-wide transition-colors duration-300"
+                    style={{ color: isActive ? "#00B4D8" : "rgba(255,255,255,0.3)" }}
+                  >
                     Detaylı Bilgi
-                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ChevronRight
+                      className="w-3.5 h-3.5 transition-transform duration-300"
+                      style={{ transform: isActive ? "translateX(4px)" : "translateX(0)" }}
+                    />
                   </div>
                 </div>
               </Link>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom padding */}

@@ -180,15 +180,15 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-y border-white/[0.06]" style={{ background: "#07101f" }}>
         {/* Left label pin */}
         <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center px-5 md:px-8"
-          style={{ background: "linear-gradient(to right, #07101f 70%, transparent)" }}>
+          style={{ background: "linear-gradient(to right, #07101f 75%, transparent)" }}>
           <span className="text-white/25 text-[9px] font-bold tracking-[0.28em] uppercase whitespace-nowrap">
-            Tercih Eden Markalar
+            Hizmet Alanlarımız
           </span>
           <div className="w-px h-6 bg-white/10 ml-5" />
         </div>
 
-        {/* Marquee track */}
-        <div className="flex overflow-hidden py-5 pl-56 md:pl-64">
+        {/* Marquee track — starts right after the | separator */}
+        <div className="flex overflow-hidden py-5 pl-52 md:pl-60">
           <div
             className="flex items-center gap-0 shrink-0"
             style={{ animation: "marquee 28s linear infinite" }}

@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import ana1 from "@assets/ana5_1780317282679.jpeg";
+import ana1 from "@assets/ana1_1780320498300.jpeg";
 import ana3 from "@assets/ana3_1780314877331.jpeg";
 import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
@@ -26,7 +26,7 @@ export default function HomePage() {
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${ana1})` }}
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/93 via-primary/68 to-primary/12" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary/97 via-primary/82 to-primary/28" />
 
         <div className="container relative z-10 mx-auto px-4 md:px-8 py-14 md:py-20">
           <div className="max-w-[420px]">
@@ -69,7 +69,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{ backgroundImage: `url(${ana3})` }}
           />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/91" />
           <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
             <div>
               <div className="flex items-center gap-3 mb-6">

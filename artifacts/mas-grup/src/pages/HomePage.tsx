@@ -176,27 +176,54 @@ export default function HomePage() {
 
       </section>
 
-      {/* REFERENCE BRANDS STRIP */}
-      <section className="py-8 bg-white border-t border-primary/8">
-        <div className="container mx-auto px-4 md:px-8">
-          <p className="text-center text-xs font-bold tracking-[0.18em] text-primary/50 uppercase mb-6">
-            Güvenilir Hizmet Anlayışımızı Tercih Eden Markalar
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+      {/* TRUSTED BY — dark marquee strip */}
+      <section className="relative overflow-hidden border-y border-white/[0.06]" style={{ background: "#07101f" }}>
+        {/* Left label pin */}
+        <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center px-5 md:px-8"
+          style={{ background: "linear-gradient(to right, #07101f 70%, transparent)" }}>
+          <span className="text-white/25 text-[9px] font-bold tracking-[0.28em] uppercase whitespace-nowrap">
+            Tercih Eden Markalar
+          </span>
+          <div className="w-px h-6 bg-white/10 ml-5" />
+        </div>
+
+        {/* Marquee track */}
+        <div className="flex overflow-hidden py-5 pl-56 md:pl-64">
+          <div
+            className="flex items-center gap-0 shrink-0"
+            style={{ animation: "marquee 28s linear infinite" }}
+          >
             {[
-              { icon: Home, label: "Villa\nProjeleri" },
-              { icon: Building2, label: "Plaza\nResidence" },
-              { icon: Sparkles, label: "Luxury\nLiving" },
-              { icon: HardHat, label: "Corporate\nOffices" },
-              { icon: CheckCircle, label: "Premium\nServices" },
+              "Villa Projeleri", "Plaza Residence", "Luxury Living",
+              "Corporate Offices", "Premium Services", "Ofis Kompleksleri",
+              "Rezidans Projeleri", "Endüstriyel Tesisler",
             ].map((brand, i) => (
-              <div key={i} className="flex flex-col items-center gap-2 text-center opacity-50 hover:opacity-100 transition-opacity cursor-default">
-                <brand.icon className="w-7 h-7 text-primary" />
-                <span className="text-[10px] font-bold text-primary uppercase tracking-wider whitespace-pre-line leading-tight">{brand.label}</span>
+              <div key={i} className="flex items-center gap-0 shrink-0">
+                <span className="text-white/30 text-xs font-bold tracking-[0.18em] uppercase hover:text-accent transition-colors duration-300 cursor-default px-8 whitespace-nowrap">
+                  {brand}
+                </span>
+                <span className="text-accent/30 text-lg font-thin select-none">·</span>
+              </div>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {[
+              "Villa Projeleri", "Plaza Residence", "Luxury Living",
+              "Corporate Offices", "Premium Services", "Ofis Kompleksleri",
+              "Rezidans Projeleri", "Endüstriyel Tesisler",
+            ].map((brand, i) => (
+              <div key={`b${i}`} className="flex items-center gap-0 shrink-0">
+                <span className="text-white/30 text-xs font-bold tracking-[0.18em] uppercase hover:text-accent transition-colors duration-300 cursor-default px-8 whitespace-nowrap">
+                  {brand}
+                </span>
+                <span className="text-accent/30 text-lg font-thin select-none">·</span>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-24 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #07101f, transparent)" }} />
       </section>
 
       {/* NEDEN MAS GRUP? */}

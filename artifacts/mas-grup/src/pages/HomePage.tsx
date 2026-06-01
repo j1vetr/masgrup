@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings } from "lucide-react";
+import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import ana1 from "@assets/ana5_1780317282679.jpeg";
@@ -9,6 +9,8 @@ import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
 import nedenBg from "@assets/ana3_1780318262914.jpeg";
+import akademiImg from "@assets/ChatGPT_Image_1_Haz_2026_16_16_45_1780319814575.png";
+import logoDark from "@assets/logo_dark_1780317107003.png";
 import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.png";
 import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.png";
 import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_1780318762434.png";
@@ -494,9 +496,11 @@ export default function HomePage() {
       </section>
 
       {/* MAS AKADEMİ TEASER */}
-      <section className="py-24 bg-white">
+      <section className="py-28 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left: text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -504,107 +508,184 @@ export default function HomePage() {
               className="space-y-8"
             >
               <div>
-                <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">EĞİTİM · KALİTE · DİSİPLİN</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mas Akademi</h2>
-                <p className="text-primary/70 text-lg leading-relaxed">
+                <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">EĞİTİM · KALİTE · DİSİPLİN</span>
+                <h2 className="text-4xl md:text-5xl font-black text-primary mb-5 leading-tight">Mas Akademi</h2>
+                <p className="text-primary/60 text-base leading-relaxed">
                   Mas Grup bünyesinde yer alan Mas Akademi, tüm ekip üyelerinin profesyonel eğitim süreçlerinden geçtiği özel bir sistemdir.
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {["Temizlik teknikleri", "Detay odaklı çalışma", "Müşteri iletişimi", "Hizmet standardı"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                      <Check className="w-4 h-4" />
+                  <div key={i} className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                      <Check className="w-3 h-3" />
                     </div>
-                    <span className="font-medium text-primary">{item}</span>
+                    <span className="font-semibold text-primary text-sm">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <blockquote className="border-l-4 border-accent pl-6 text-xl text-primary italic font-medium">
+              <blockquote className="border-l-[3px] border-accent pl-5 text-lg text-primary/80 italic font-medium leading-relaxed">
                 "Güçlü ekip, kaliteli hizmetin temelidir."
               </blockquote>
 
               <Link href="/akademi">
-                <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-white">
-                  Akademi Hakkında Bilgi Al
+                <Button variant="outline" size="lg" className="border-accent/50 text-accent hover:bg-accent hover:text-white hover:border-accent gap-2 transition-all">
+                  Akademi Hakkında Bilgi Al <ChevronRight className="w-4 h-4" />
                 </Button>
               </Link>
             </motion.div>
 
+            {/* Right: new training photo */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="relative"
             >
               <img
-                src={ana4}
-                alt="Mas Akademi"
-                className="rounded-2xl shadow-xl w-full"
+                src={akademiImg}
+                alt="Mas Akademi Eğitimi"
+                className="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
+              {/* Accent badge */}
+              <div className="absolute -bottom-4 -left-4 bg-accent text-white rounded-2xl px-5 py-3 shadow-lg text-sm font-bold">
+                Mas Akademi Sertifikası
+              </div>
             </motion.div>
+
           </div>
         </div>
       </section>
 
       {/* SOSYAL SORUMLULUK */}
-      <section className="bg-[#f0f5fa] overflow-hidden">
-        <div className="grid md:grid-cols-2">
-          <div className="h-[400px] md:h-auto w-full relative">
-            <img src={ana6} alt="Sosyal Sorumluluk" className="absolute inset-0 w-full h-full object-cover" />
+      <section className="overflow-hidden">
+        <div className="grid lg:grid-cols-2 min-h-[480px]">
+
+          {/* Left: full dark image */}
+          <div className="relative h-72 lg:h-auto">
+            <img src={ana6} alt="Sürdürülebilir Bakış" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/30 to-transparent" />
           </div>
-          <div className="p-12 md:p-20 lg:p-32 flex flex-col justify-center">
+
+          {/* Right: text + 3 value cards */}
+          <div className="bg-white flex items-center py-16 px-10 lg:px-16">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="grid lg:grid-cols-[1fr,auto] gap-10 w-full items-start"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 leading-tight">
-                Sadece Temizlik Değil, Değer Üretiyoruz
-              </h2>
-              <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
-                <p>
-                  Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız. Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz.
-                </p>
-                <p>
-                  Bunu bir kampanya olarak değil, hayatımızın bir parçası olarak görüyoruz. Çünkü temiz bir gelecek, küçük adımlarla başlar.
-                </p>
+              {/* Text */}
+              <div>
+                <div className="flex items-center gap-2 mb-5">
+                  <Leaf className="w-4 h-4 text-accent" />
+                  <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs">Sürdürülebilir Bakış</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-black text-primary mb-6 leading-tight">
+                  Sadece Temizlik Değil,<br />Değer Üretiyoruz
+                </h2>
+                <div className="space-y-4 text-primary/60 text-sm leading-relaxed">
+                  <p>
+                    Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız. Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz.
+                  </p>
+                  <p>
+                    Bunu bir kampanya olarak değil, hayatımızın bir parçası olarak görüyoruz. Çünkü temiz bir gelecek, küçük adımlarla başlar.
+                  </p>
+                </div>
+              </div>
+
+              {/* 3 value cards */}
+              <div className="space-y-3 min-w-[190px]">
+                {[
+                  { icon: Leaf,   text: "Doğaya saygı, yaşama değer." },
+                  { icon: Users,  text: "Topluma katkı, ortak geleceğimiz." },
+                  { icon: Globe,  text: "Küçük adımlar, büyük değişimler." },
+                ].map((v, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-[#f4f8fc] border border-primary/8 rounded-2xl p-4 flex items-start gap-3"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                      <v.icon className="w-4 h-4" />
+                    </div>
+                    <p className="text-primary/70 text-xs font-semibold leading-snug pt-1">{v.text}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
+
         </div>
       </section>
 
       {/* MANİFESTO */}
-      <section className="py-32 bg-primary relative overflow-hidden">
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 text-[20rem] text-accent/10 font-serif leading-none select-none">"</div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 leading-tight">
-              Nasıl çalıştığımız değil, neden çalıştığımız önemlidir.
-            </h2>
-            <div className="space-y-8 text-xl text-white/80 leading-relaxed mb-16">
-              <p>
-                Mas Grup olarak biz, temizlik hizmetini yalnızca bir iş olarak görmüyoruz. Bizim için her yaşam alanı, bir insanın hayatına dokunduğumuz yerdir.
-              </p>
-              <p>
-                Yaptığımız işin temelinde; güven, özen ve saygı vardır. Her detayı önemseriz. Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir.
-              </p>
-            </div>
+      <section className="py-28 bg-[#0D1B3E] relative overflow-hidden text-white">
+        {/* Logo watermark */}
+        <img
+          src={logoDark}
+          alt=""
+          className="absolute bottom-10 right-10 w-40 opacity-[0.04] pointer-events-none select-none"
+        />
+        {/* Dot texture */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        />
+        {/* Accent glow top */}
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-accent/5 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">İnsan Odaklılık</h3>
-              <p className="text-white/70">
-                Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz.
-              </p>
-            </div>
-          </motion.div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="grid lg:grid-cols-[3fr,2fr] gap-16 items-start">
+
+            {/* Left: quote + paragraphs */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-accent text-8xl font-serif leading-none block mb-2 select-none">"</span>
+              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-10">
+                Nasıl çalıştığımız değil, neden çalıştığımız önemlidir.
+              </h2>
+              <div className="space-y-5 text-white/50 text-base leading-relaxed">
+                <p>
+                  Mas Grup olarak biz, temizlik hizmetini yalnızca bir iş olarak görmüyoruz. Bizim için her yaşam alanı, bir insanın hayatına dokunduğumuz yerdir.
+                </p>
+                <p>
+                  Yaptığımız işin temelinde; güven, özen ve saygı vardır. Her detayı önemseriz. Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right: İnsan Odaklılık card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:pt-16"
+            >
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
+                {/* Ghost icon art */}
+                <UserCircle2 className="absolute -bottom-4 -right-4 w-32 h-32 text-white/[0.03] pointer-events-none" />
+
+                <div className="w-14 h-14 rounded-2xl bg-accent/15 border border-accent/20 flex items-center justify-center text-accent mb-6">
+                  <UserCircle2 className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">İnsan Odaklılık</h3>
+                <p className="text-white/55 text-sm leading-relaxed">
+                  Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz. Çünkü güçlü bir ekip, güçlü bir hizmet demektir.
+                </p>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 

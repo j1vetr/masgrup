@@ -19,6 +19,7 @@ import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_17803187624
 import svcDetay from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(4)_1780318762433.png";
 
 export default function HomePage() {
+  useEffect(() => { document.title = "Mas Grup | Profesyonel Temizlik Hizmetleri"; }, []);
   const [activeStep, setActiveStep] = useState(0);
   useEffect(() => {
     const t = setInterval(() => setActiveStep(s => (s + 1) % 5), 1800);

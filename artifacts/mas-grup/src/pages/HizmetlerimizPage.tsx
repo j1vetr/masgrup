@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, CheckCircle } from "lucide-react";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import ana7 from "@assets/ana7_1780314877332.jpeg";
 
 export default function HizmetlerimizPage() {
+  useEffect(() => { document.title = "Hizmetlerimiz | Mas Grup"; }, []);
   const services = [
     {
       id: "ev-temizligi",

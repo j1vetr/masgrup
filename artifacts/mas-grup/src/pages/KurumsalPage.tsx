@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, Home, Building2, Crown, Briefcase, Star, Factory, Eye, ClipboardList, Sparkles, ZoomIn, CheckSquare } from "lucide-react";
@@ -6,6 +7,7 @@ import ana3 from "@assets/ana3_1780314877331.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
 
 export default function KurumsalPage() {
+  useEffect(() => { document.title = "Kurumsal | Mas Grup"; }, []);
   return (
     <div className="w-full">
       {/* Page Hero */}

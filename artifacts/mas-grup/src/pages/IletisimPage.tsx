@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, Phone, Mail, MapPin, Clock, Linkedin, Instagram, Facebook } from "lucide-react";
@@ -20,6 +21,7 @@ const formSchema = z.object({
 });
 
 export default function IletisimPage() {
+  useEffect(() => { document.title = "İletişim | Mas Grup"; }, []);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({

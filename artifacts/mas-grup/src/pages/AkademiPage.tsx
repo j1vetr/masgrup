@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, Sparkles, ZoomIn, MessageCircle, Award, CheckCircle } from "lucide-react";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import ana4 from "@assets/ana4_1780314877331.jpeg";
 
 export default function AkademiPage() {
+  useEffect(() => { document.title = "Mas Akademi | Mas Grup"; }, []);
   return (
     <div className="w-full">
       {/* Page Hero */}

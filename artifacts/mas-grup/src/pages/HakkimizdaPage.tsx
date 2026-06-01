@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Shield, Heart, Star, Award, ChevronRight } from "lucide-react";
@@ -5,6 +6,7 @@ import { Shield, Heart, Star, Award, ChevronRight } from "lucide-react";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
 
 export default function HakkimizdaPage() {
+  useEffect(() => { document.title = "Hakkımızda | Mas Grup"; }, []);
   return (
     <div className="w-full">
       {/* Page Hero */}

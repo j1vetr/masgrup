@@ -21,15 +21,18 @@ export default function HomePage() {
   return (
     <div className="w-full">
 
+      {/* ABOVE-FOLD: hero + 3-panel + marquee — exactly 100vh */}
+      <div className="h-screen flex flex-col">
+
       {/* HERO SECTION */}
-      <section className="relative bg-primary" style={{ paddingTop: 52 }}>
+      <section className="relative bg-primary flex-1 flex flex-col" style={{ paddingTop: 52 }}>
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${ana1})` }}
         />
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050d1a]/97 via-[#080f20]/82 to-[#0a1428]/28" />
 
-        <div className="container relative z-10 mx-auto px-4 md:px-8 py-8 md:py-10">
+        <div className="container relative z-10 mx-auto px-4 md:px-8 py-8 md:py-10 flex-1 flex items-center">
           <div className="max-w-[420px]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -225,6 +228,8 @@ export default function HomePage() {
         <div className="absolute right-0 top-0 bottom-0 w-24 pointer-events-none"
           style={{ background: "linear-gradient(to left, #07101f, transparent)" }} />
       </section>
+
+      </div>{/* end above-fold wrapper */}
 
       {/* NEDEN MAS GRUP? */}
       <section className="py-24 bg-white">

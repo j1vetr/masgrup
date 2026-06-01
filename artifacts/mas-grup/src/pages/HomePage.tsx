@@ -257,7 +257,7 @@ export default function HomePage() {
             </h2>
 
             {/* 2×2 compact feature tiles */}
-            <div className="grid grid-cols-2 gap-3 mb-10">
+            <div className="grid grid-cols-2 gap-4 mb-10">
               {[
                 { num: "01", title: "Sistemli Temizlik", desc: "Planlı süreç, sıfır hata payı." },
                 { num: "02", title: "Eğitimli Ekip", desc: "Sürekli eğitim, saha denetimi." },
@@ -270,7 +270,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group relative rounded-xl p-4 cursor-default overflow-hidden border border-white/[0.06] hover:border-accent/30 transition-all duration-400"
+                  className="group relative rounded-xl p-5 cursor-default overflow-hidden border border-white/[0.06] hover:border-accent/30 transition-all duration-400"
                   style={{ background: "rgba(255,255,255,0.03)" }}
                 >
                   <span className="absolute top-3 right-3 font-black text-xs tabular-nums" style={{ color: "rgba(255,255,255,0.07)" }}>{item.num}</span>
@@ -282,15 +282,6 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Stats row */}
-            <div className="flex gap-8 pt-8 border-t border-white/[0.07]">
-              {[["2.500+", "Proje"], ["12+", "Yıl"], ["%98", "Memnuniyet"]].map(([num, label]) => (
-                <div key={label}>
-                  <div className="font-black text-2xl leading-none" style={{ color: "#00B4D8" }}>{num}</div>
-                  <div className="text-white/35 text-[10px] font-bold tracking-widest uppercase mt-1.5">{label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* RIGHT — image, full bleed to edge */}

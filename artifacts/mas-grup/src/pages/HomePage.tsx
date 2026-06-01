@@ -359,43 +359,136 @@ export default function HomePage() {
       </section>
 
       {/* SİSTEMLİ TEMİZLİK YAKLAŞIMI */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">Nasıl Çalışıyoruz?</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sistemli Temizlik Yaklaşımı</h2>
-            <p className="text-white/70 text-lg">Mas Grup'ta her hizmet belirli bir sistemle ilerler.</p>
+      <section
+        className="relative py-32 overflow-hidden text-white"
+        style={{ background: "linear-gradient(140deg,#030b1a 0%,#0d1b3e 55%,#071626 100%)" }}
+      >
+        {/* Dot grid texture */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(rgba(0,180,216,0.07) 1px, transparent 1px)",
+            backgroundSize: "30px 30px",
+          }}
+        />
+        {/* Decorative circles */}
+        <div className="absolute -top-48 -right-48 w-[560px] h-[560px] rounded-full border border-white/[0.04] pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full border border-accent/[0.06] pointer-events-none" />
+        {/* Top accent glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+
+          {/* Split editorial header */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-accent/70 text-xs font-bold tracking-[0.3em] uppercase mb-5 block">
+                Nasıl Çalışıyoruz?
+              </span>
+              <h2 className="text-5xl md:text-7xl font-black leading-[1.0] tracking-tight">
+                Sistemli<br />
+                <span className="text-accent">Temizlik</span><br />
+                Yaklaşımı
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:max-w-xs"
+            >
+              <p className="text-white/40 text-base leading-relaxed mb-8">
+                Mas Grup'ta her hizmet adım adım planlanır, her detay gözlemlenir ve sonuç güvence altına alınır.
+              </p>
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <p className="text-3xl font-black text-accent">5</p>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Adım</p>
+                </div>
+                <div className="w-px h-10 bg-white/10" />
+                <div className="text-center">
+                  <p className="text-3xl font-black text-white">100%</p>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Kontrol</p>
+                </div>
+                <div className="w-px h-10 bg-white/10" />
+                <div className="text-center">
+                  <p className="text-3xl font-black text-white">0</p>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Hata Payı</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="relative">
-            <div className="absolute top-12 left-0 right-0 h-0.5 bg-white/10 hidden lg:block border-t-2 border-dashed border-accent/50" />
-            <div className="grid lg:grid-cols-5 gap-12 relative z-10">
-              {[
-                { icon: Eye, title: "Gözlem", desc: "Alan değerlendirmesi yapılır" },
-                { icon: ClipboardList, title: "Hazırlık", desc: "Ekipman ve plan hazırlanır" },
-                { icon: Sparkles, title: "Temizlik", desc: "Profesyonel uygulama başlar" },
-                { icon: ZoomIn, title: "Detay", desc: "Her köşe kontrol edilir" },
-                { icon: CheckSquare, title: "Kontrol", desc: "Kalite onayı alınır" }
-              ].map((step, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold mb-4">
-                    {idx + 1}
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                    <step.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">{step.title}</h4>
-                  <p className="text-white/60 text-sm">{step.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          {/* Steps panel */}
+          <div className="rounded-3xl border border-white/10 overflow-hidden divide-y md:divide-y-0 md:grid md:grid-cols-5 md:divide-x divide-white/10">
+            {[
+              {
+                icon: Eye,
+                title: "Keşif & Gözlem",
+                desc: "Alan yerinde incelenir, özel ihtiyaçlar ve kritik noktalar belirlenir. Müşteri beklentisi dinlenir.",
+              },
+              {
+                icon: ClipboardList,
+                title: "Plan & Hazırlık",
+                desc: "Ekipman, kimyasal ve personel seçimi yapılır. Zaman ve kaynak planı oluşturulur.",
+              },
+              {
+                icon: Sparkles,
+                title: "Uygulama",
+                desc: "Plana bağlı kalınarak profesyonel temizlik uygulaması gerçekleştirilir. Her alan sistematik işlenir.",
+              },
+              {
+                icon: ZoomIn,
+                title: "Detay Tarama",
+                desc: "Standart gözden kaçabilecek köşeler, yüzeyler ve detaylar özel tekniklerle taranır.",
+              },
+              {
+                icon: CheckSquare,
+                title: "Kalite Onayı",
+                desc: "Hizmet tamamlandıktan sonra denetim yapılır. Onay alınmadan teslim gerçekleşmez.",
+              },
+            ].map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="relative p-8 group hover:bg-white/[0.04] transition-colors duration-400 overflow-hidden"
+              >
+                {/* Ghost number art */}
+                <span className="absolute bottom-0 right-2 text-[110px] font-black leading-none select-none pointer-events-none text-white/[0.03] group-hover:text-white/[0.06] transition-colors duration-500">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                {/* Step label + accent bar */}
+                <div className="flex items-center gap-3 mb-7">
+                  <div className="w-0.5 h-7 bg-accent rounded-full" />
+                  <span className="text-accent/50 text-[11px] font-bold tracking-[0.25em] uppercase">
+                    {String(idx + 1).padStart(2, "0")} / 05
+                  </span>
+                </div>
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent mb-6 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all duration-300">
+                  <step.icon className="w-6 h-6" />
+                </div>
+
+                {/* Title */}
+                <h4 className="text-base font-bold mb-3 leading-snug">{step.title}</h4>
+
+                {/* Description */}
+                <p className="text-white/35 text-xs leading-relaxed">{step.desc}</p>
+
+                {/* Bottom hover sweep */}
+                <div className="absolute bottom-0 left-0 h-0.5 w-full bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -85,7 +85,7 @@ export default function IletisimPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary mb-1">Telefon</h4>
-                      <p className="text-primary/70">+90 532 123 45 67</p>
+                      <p className="text-primary/70">0533 601 76 22</p>
                     </div>
                   </div>
 
@@ -95,7 +95,7 @@ export default function IletisimPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary mb-1">E-posta</h4>
-                      <p className="text-primary/70">info@masgrup.com.tr</p>
+                      <p className="text-primary/70">info@masgrupcleaning.com.tr</p>
                     </div>
                   </div>
 

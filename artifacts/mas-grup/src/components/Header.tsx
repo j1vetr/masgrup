@@ -45,7 +45,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-2 font-medium text-primary">
               <Phone className="w-4 h-4 text-accent" />
-              <span>0532 123 45 67</span>
+              <span>0533 601 76 22</span>
             </div>
             <Link href="/iletisim">
               <Button className="bg-accent hover:bg-accent/90 text-white border-0 font-bold tracking-wide">
@@ -95,7 +95,7 @@ export default function Header() {
           <div className="mt-auto space-y-6">
             <div className="flex items-center gap-3 text-white/90">
               <Phone className="w-5 h-5 text-accent" />
-              <span className="text-lg">0532 123 45 67</span>
+              <span className="text-lg">0533 601 76 22</span>
             </div>
             <Link href="/iletisim" onClick={() => setMobileMenuOpen(false)}>
               <Button className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg font-bold">

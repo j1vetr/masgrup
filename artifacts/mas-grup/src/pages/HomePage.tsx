@@ -381,47 +381,52 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
 
-          {/* Split editorial header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20">
+          {/* Editorial header — label left, title right */}
+          <div className="grid lg:grid-cols-[200px,1fr,auto] gap-10 items-end mb-20">
+            {/* Label column */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-3"
+            >
+              <div className="w-8 h-0.5 bg-accent" />
+              <span className="text-accent/70 text-xs font-bold tracking-[0.3em] uppercase leading-snug">
+                Nasıl<br />Çalışıyoruz?
+              </span>
+            </motion.div>
+
+            {/* Title column */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-accent/70 text-xs font-bold tracking-[0.3em] uppercase mb-5 block">
-                Nasıl Çalışıyoruz?
-              </span>
               <h2 className="text-5xl md:text-7xl font-black leading-[1.0] tracking-tight">
-                Sistemli<br />
-                <span className="text-accent">Temizlik</span><br />
-                Yaklaşımı
+                Sistemli <span className="text-accent">Temizlik</span> Yaklaşımı
               </h2>
             </motion.div>
 
+            {/* Stats column */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:max-w-xs"
+              className="flex items-center gap-6"
             >
-              <p className="text-white/40 text-base leading-relaxed mb-8">
-                Mas Grup'ta her hizmet adım adım planlanır, her detay gözlemlenir ve sonuç güvence altına alınır.
-              </p>
-              <div className="flex items-center gap-6">
-                <div className="text-center">
-                  <p className="text-3xl font-black text-accent">5</p>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Adım</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-3xl font-black text-white">100%</p>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Kontrol</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-3xl font-black text-white">0</p>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Hata Payı</p>
-                </div>
+              <div className="text-center">
+                <p className="text-3xl font-black text-accent">5</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Adım</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <p className="text-3xl font-black text-white">100%</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Kontrol</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <p className="text-3xl font-black text-white">0</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Hata Payı</p>
               </div>
             </motion.div>
           </div>

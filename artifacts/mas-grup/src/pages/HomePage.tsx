@@ -295,109 +295,141 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HİZMETLERİMİZ PREVIEW — editorial stacker */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8">
+      {/* HİZMETLERİMİZ PREVIEW — dark magazine grid */}
+      <section
+        className="py-20 relative overflow-hidden"
+        style={{ background: "linear-gradient(150deg,#060e1c 0%,#0a1628 60%,#050d18 100%)" }}
+      >
+        {/* Subtle dot texture */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{ backgroundImage: "radial-gradient(rgba(0,180,216,0.06) 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        />
 
-          {/* Section header */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 pb-8 border-b border-primary/10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase block mb-4">Çözümlerimiz</span>
-              <h2 className="text-5xl md:text-6xl font-black text-primary leading-[1.0] tracking-tight">
-                Profesyonel<br /><span className="text-accent">Hizmetler</span>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10"
+          >
+            <div>
+              <span className="text-accent text-[10px] font-bold tracking-[0.32em] uppercase block mb-3">Çözümlerimiz</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
+                Profesyonel <span className="text-accent">Hizmetler</span>
               </h2>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            </div>
+            <p className="text-white/35 text-xs leading-relaxed max-w-[220px] sm:text-right">
+              Her alana özel sistemli çözümler. Planlı, denetimli, garantili.
+            </p>
+          </motion.div>
+
+          {/* Magazine grid: 1 big left + 3 right */}
+          <div className="grid lg:grid-cols-[1.15fr,1fr] gap-3">
+
+            {/* Feature card — Ev Temizliği */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-primary/50 text-sm leading-relaxed max-w-xs md:text-right"
             >
-              Her alanın ihtiyacına özel, planlı ve sistemli temizlik çözümleriyle yaşam alanlarınızı dönüştürüyoruz.
-            </motion.p>
-          </div>
+              <Link href="/hizmetlerimiz">
+                <div className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] lg:h-full min-h-[400px]">
+                  <img
+                    src={svcEv}
+                    alt="Ev Temizliği"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050d18]/95 via-[#050d18]/40 to-[#050d18]/10" />
 
-          {/* Stacked service rows */}
-          <div className="divide-y divide-primary/8">
-            {[
-              { num: "01", icon: Home,      img: svcEv,      title: "Ev Temizliği",    tag: "Konut", desc: "Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam." },
-              { num: "02", icon: Building2, img: svcOfis,    title: "Ofis Temizliği",  tag: "Kurumsal", desc: "Çalışma veriminizi artıran düzenli ve sistematik temizlik." },
-              { num: "03", icon: HardHat,   img: svcInsaat,  title: "İnşaat Sonrası",  tag: "Endüstriyel", desc: "Yapı artıklarından arındırılmış, teslime hazır mekanlar." },
-              { num: "04", icon: Sparkles,  img: svcDetay,   title: "Detay Temizlik",  tag: "Premium", desc: "Gözden kaçan her noktada mükemmeliyetin standardı." },
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.07 }}
-              >
-                <Link href="/hizmetlerimiz">
-                  <div className="group relative flex items-center gap-6 py-7 cursor-pointer overflow-hidden">
-                    {/* Hover sweep bg */}
-                    <div className="absolute inset-0 bg-primary/[0.03] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-out pointer-events-none" />
-
-                    {/* Ghost number */}
-                    <span className="text-[56px] font-black text-primary/[0.06] leading-none select-none shrink-0 w-20 text-right group-hover:text-accent/10 transition-colors duration-500">
-                      {service.num}
+                  {/* Top row */}
+                  <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
+                    <span className="text-white/30 text-xs font-bold tracking-[0.2em]">01</span>
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-accent border border-accent/30 bg-accent/10 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                      Konut
                     </span>
+                  </div>
 
-                    {/* Icon */}
-                    <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                      <service.icon className="w-5 h-5" />
-                    </div>
-
-                    {/* Title + tag */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-xl md:text-2xl font-black text-primary group-hover:text-accent transition-colors duration-300 tracking-tight">
-                          {service.title}
-                        </h3>
-                        <span className="text-[10px] font-bold tracking-widest uppercase text-accent/60 border border-accent/20 px-2 py-0.5 rounded-full hidden md:block">
-                          {service.tag}
-                        </span>
-                      </div>
-                      <p className="text-primary/45 text-sm leading-relaxed max-w-md opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                        {service.desc}
-                      </p>
-                    </div>
-
-                    {/* Image thumbnail — slides in on hover */}
-                    <div className="relative w-28 h-20 md:w-40 md:h-28 rounded-xl overflow-hidden shrink-0 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500">
-                      <img
-                        src={service.img}
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-primary/20" />
-                    </div>
-
-                    {/* Arrow */}
-                    <div className="w-9 h-9 rounded-full border border-primary/15 flex items-center justify-center text-primary/30 group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 transition-all duration-300 shrink-0">
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
+                  {/* Bottom content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="w-6 h-px bg-accent mb-4" />
+                    <h3 className="text-2xl font-black text-white mb-2 leading-tight">Ev Temizliği</h3>
+                    <p className="text-white/50 text-xs leading-relaxed mb-5 max-w-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+                      Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz.
+                    </p>
+                    <div className="flex items-center gap-2 text-accent text-xs font-bold tracking-wide">
+                      Detaylı Bilgi
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Right column — 3 smaller cards */}
+            <div className="flex flex-col gap-3">
+              {[
+                { num: "02", img: svcOfis,   title: "Ofis Temizliği",  tag: "Kurumsal",    desc: "Çalışma veriminizi artıran düzenli ve sistematik temizlik hizmeti." },
+                { num: "03", img: svcInsaat, title: "İnşaat Sonrası",  tag: "Endüstriyel", desc: "Yapı artıklarından arındırılmış, teslime hazır mekanlar." },
+                { num: "04", img: svcDetay,  title: "Detay Temizlik",  tag: "Premium",     desc: "Gözden kaçan her noktada mükemmeliyetin standardı." },
+              ].map((svc, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="flex-1"
+                >
+                  <Link href="/hizmetlerimiz">
+                    <div className="group relative rounded-2xl overflow-hidden cursor-pointer h-[124px]">
+                      <img
+                        src={svc.img}
+                        alt={svc.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#050d18]/92 via-[#050d18]/60 to-[#050d18]/20" />
+
+                      <div className="absolute inset-0 p-5 flex items-center justify-between">
+                        {/* Left: number + name + desc */}
+                        <div className="flex-1 pr-4">
+                          <div className="flex items-center gap-2.5 mb-1.5">
+                            <span className="text-white/25 text-[10px] font-bold tracking-wider">{svc.num}</span>
+                            <span className="text-[9px] font-bold tracking-widest uppercase text-accent/70 border border-accent/20 px-2 py-0.5 rounded-full">
+                              {svc.tag}
+                            </span>
+                          </div>
+                          <h3 className="text-base font-black text-white leading-tight mb-1">{svc.title}</h3>
+                          <p className="text-white/40 text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+                            {svc.desc}
+                          </p>
+                        </div>
+
+                        {/* Right: arrow */}
+                        <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/30 group-hover:border-accent/50 group-hover:text-accent transition-all duration-300 shrink-0">
+                          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
 
           {/* Bottom CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 pt-8 border-t border-primary/10 flex items-center justify-between"
+            className="mt-8 flex justify-end"
           >
-            <p className="text-primary/40 text-xs tracking-widest uppercase font-bold">4 hizmet kategorisi</p>
             <Link href="/hizmetlerimiz">
-              <Button className="bg-primary text-white hover:bg-primary/90 gap-2 font-bold tracking-wide text-sm">
-                Tüm Hizmetleri Keşfet <ChevronRight className="w-4 h-4" />
+              <Button className="bg-accent hover:bg-accent/90 text-white gap-2 font-bold text-xs tracking-widest uppercase px-6">
+                Tüm Hizmetleri Gör <ChevronRight className="w-3.5 h-3.5" />
               </Button>
             </Link>
           </motion.div>

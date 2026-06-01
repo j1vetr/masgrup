@@ -9,6 +9,10 @@ import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
 import nedenBg from "@assets/ana3_1780318262914.jpeg";
+import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.png";
+import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.png";
+import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_1780318762434.png";
+import svcDetay from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(4)_1780318762433.png";
 
 export default function HomePage() {
   return (
@@ -289,44 +293,65 @@ export default function HomePage() {
       </section>
 
       {/* HİZMETLERİMİZ PREVIEW */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#f4f8fc]">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">Çözümlerimiz</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Profesyonel Hizmetler</h2>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-accent font-bold tracking-widest uppercase text-xs mb-3 block">Çözümlerimiz</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Profesyonel Hizmetler</h2>
+            <p className="text-primary/60 text-base leading-relaxed">
+              Her alanın ihtiyacına özel, planlı ve sistemli temizlik çözümleriyle<br />
+              yaşam ve çalışma alanlarınızı daha sağlıklı ve verimli hale getiriyoruz.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: Home, title: "Ev Temizliği", desc: "Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz." },
-              { icon: Building2, title: "Ofis Temizliği", desc: "Çalışma alanlarınızda verimliliği artıran düzenli ve profesyonel temizlik." },
-              { icon: HardHat, title: "İnşaat Sonrası", desc: "Zorlu alanlarda detaylı ve sistemli temizlik çözümleri." },
-              { icon: Sparkles, title: "Detay Temizlik", desc: "Gözden kaçan alanları standart haline getiren özel uygulamalar." }
+              { icon: Home,      img: svcEv,      title: "Ev Temizliği",    desc: "Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz." },
+              { icon: Building2, img: svcOfis,    title: "Ofis Temizliği",  desc: "Çalışma alanlarınızda verimliliği artıran düzenli ve profesyonel temizlik." },
+              { icon: HardHat,   img: svcInsaat,  title: "İnşaat Sonrası",  desc: "Zorlu alanlarda detaylı ve sistemli temizlik çözümleri." },
+              { icon: Sparkles,  img: svcDetay,   title: "Detay Temizlik",  desc: "Gözden kaçan alanları standart haline getiren özel uygulamalar." },
             ].map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-primary/10 p-8 hover:-translate-y-2 hover:shadow-xl transition-all group"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col"
               >
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
-                  <service.icon className="w-8 h-8" />
+                {/* Photo */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Icon badge */}
+                  <div className="absolute bottom-0 left-6 translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-accent border border-accent/10">
+                    <service.icon className="w-5 h-5" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">{service.title}</h3>
-                <p className="text-primary/70 mb-6 leading-relaxed">{service.desc}</p>
-                <Link href="/hizmetlerimiz" className="text-accent font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Detaylı Bilgi <ChevronRight className="w-4 h-4" />
-                </Link>
+
+                {/* Content */}
+                <div className="pt-8 px-6 pb-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-primary mb-1">{service.title}</h3>
+                  <div className="w-8 h-0.5 bg-accent mb-3" />
+                  <p className="text-primary/60 text-sm leading-relaxed flex-1">{service.desc}</p>
+                  <Link
+                    href="/hizmetlerimiz"
+                    className="mt-5 text-accent text-sm font-semibold inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all"
+                  >
+                    Detaylı Bilgi <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center">
             <Link href="/hizmetlerimiz">
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white">
-                Tüm Hizmetleri Gör
+              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 px-10 gap-2">
+                Tüm Hizmetleri Gör <ChevronRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>

@@ -295,146 +295,123 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HİZMETLERİMİZ PREVIEW — dark magazine grid */}
-      <section
-        className="py-20 relative overflow-hidden"
-        style={{ background: "linear-gradient(150deg,#060e1c 0%,#0a1628 60%,#050d18 100%)" }}
-      >
-        {/* Subtle dot texture */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-40"
-          style={{ backgroundImage: "radial-gradient(rgba(0,180,216,0.06) 1px, transparent 1px)", backgroundSize: "32px 32px" }}
-        />
+      {/* HİZMETLERİMİZ PREVIEW — full-width horizontal strip */}
+      <section className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-
-          {/* Header */}
+        {/* Header row */}
+        <div className="px-6 md:px-12 pt-16 pb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10"
           >
-            <div>
-              <span className="text-accent text-[10px] font-bold tracking-[0.32em] uppercase block mb-3">Çözümlerimiz</span>
-              <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
-                Profesyonel <span className="text-accent">Hizmetler</span>
-              </h2>
-            </div>
-            <p className="text-white/35 text-xs leading-relaxed max-w-[220px] sm:text-right">
-              Her alana özel sistemli çözümler. Planlı, denetimli, garantili.
-            </p>
+            <span className="text-accent text-[10px] font-bold tracking-[0.32em] uppercase block mb-2">Çözümlerimiz</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
+              Profesyonel <span className="text-accent">Hizmetler</span>
+            </h2>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex items-center gap-4"
+          >
+            <p className="text-white/30 text-xs leading-relaxed max-w-[180px] sm:text-right hidden sm:block">
+              Her alana özel, planlı ve denetimli temizlik.
+            </p>
+            <Link href="/hizmetlerimiz">
+              <button className="text-[10px] font-bold tracking-widest uppercase text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 px-4 py-2 rounded-full">
+                Tümünü Gör →
+              </button>
+            </Link>
+          </motion.div>
+        </div>
 
-          {/* Magazine grid: 1 big left + 3 right */}
-          <div className="grid lg:grid-cols-[1.15fr,1fr] gap-3">
-
-            {/* Feature card — Ev Temizliği */}
+        {/* 4-card horizontal grid — no gaps, edge-to-edge */}
+        <div className="grid grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              num: "01", img: svcEv,      title: "Ev Temizliği",   tag: "Konut",
+              desc: "Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz.",
+              accent: "#00B4D8",
+            },
+            {
+              num: "02", img: svcOfis,    title: "Ofis Temizliği", tag: "Kurumsal",
+              desc: "Çalışma veriminizi artıran düzenli ve sistematik temizlik hizmeti.",
+              accent: "#00B4D8",
+            },
+            {
+              num: "03", img: svcInsaat,  title: "İnşaat Sonrası", tag: "Endüstriyel",
+              desc: "Yapı artıklarından arındırılmış, teslime hazır mekanlar.",
+              accent: "#00B4D8",
+            },
+            {
+              num: "04", img: svcDetay,   title: "Detay Temizlik", tag: "Premium",
+              desc: "Gözden kaçan her noktada mükemmeliyetin standardı.",
+              accent: "#00B4D8",
+            },
+          ].map((svc, i) => (
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.08 }}
+              className="relative overflow-hidden group cursor-pointer h-[420px] md:h-[500px]"
+              style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : undefined }}
             >
-              <Link href="/hizmetlerimiz">
-                <div className="group relative rounded-2xl overflow-hidden cursor-pointer h-[400px] lg:h-full min-h-[400px]">
-                  <img
-                    src={svcEv}
-                    alt="Ev Temizliği"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050d18]/95 via-[#050d18]/40 to-[#050d18]/10" />
+              <Link href="/hizmetlerimiz" className="block w-full h-full">
+                {/* Photo */}
+                <img
+                  src={svc.img}
+                  alt={svc.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  style={{ transitionTimingFunction: "cubic-bezier(0.25,0.46,0.45,0.94)" }}
+                />
 
-                  {/* Top row */}
-                  <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
-                    <span className="text-white/30 text-xs font-bold tracking-[0.2em]">01</span>
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-accent border border-accent/30 bg-accent/10 px-2.5 py-1 rounded-full backdrop-blur-sm">
-                      Konut
-                    </span>
+                {/* Base overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07101f]/96 via-[#07101f]/45 to-[#07101f]/15 transition-opacity duration-500 group-hover:opacity-80" />
+
+                {/* Hover accent sweep from bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+
+                {/* Top: number + pill */}
+                <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
+                  <span className="text-white/20 text-xs font-black tracking-widest">{svc.num}</span>
+                  <span className="text-[9px] font-bold tracking-widest uppercase text-accent border border-accent/25 bg-[#07101f]/60 backdrop-blur-sm px-2.5 py-0.5 rounded-full">
+                    {svc.tag}
+                  </span>
+                </div>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  {/* Accent line */}
+                  <div className="w-5 h-px bg-accent mb-4 group-hover:w-10 transition-all duration-400" />
+
+                  <h3 className="text-xl font-black text-white leading-tight mb-3 group-hover:text-accent transition-colors duration-300">
+                    {svc.title}
+                  </h3>
+
+                  {/* Description — hidden by default, slides up on hover */}
+                  <div className="overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500">
+                    <p className="text-white/55 text-xs leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {svc.desc}
+                    </p>
                   </div>
 
-                  {/* Bottom content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="w-6 h-px bg-accent mb-4" />
-                    <h3 className="text-2xl font-black text-white mb-2 leading-tight">Ev Temizliği</h3>
-                    <p className="text-white/50 text-xs leading-relaxed mb-5 max-w-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                      Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz.
-                    </p>
-                    <div className="flex items-center gap-2 text-accent text-xs font-bold tracking-wide">
-                      Detaylı Bilgi
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+                  <div className="flex items-center gap-1.5 text-white/30 text-[11px] font-bold tracking-wide group-hover:text-accent transition-colors duration-300">
+                    Detaylı Bilgi
+                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </Link>
             </motion.div>
-
-            {/* Right column — 3 smaller cards */}
-            <div className="flex flex-col gap-3">
-              {[
-                { num: "02", img: svcOfis,   title: "Ofis Temizliği",  tag: "Kurumsal",    desc: "Çalışma veriminizi artıran düzenli ve sistematik temizlik hizmeti." },
-                { num: "03", img: svcInsaat, title: "İnşaat Sonrası",  tag: "Endüstriyel", desc: "Yapı artıklarından arındırılmış, teslime hazır mekanlar." },
-                { num: "04", img: svcDetay,  title: "Detay Temizlik",  tag: "Premium",     desc: "Gözden kaçan her noktada mükemmeliyetin standardı." },
-              ].map((svc, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 24 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex-1"
-                >
-                  <Link href="/hizmetlerimiz">
-                    <div className="group relative rounded-2xl overflow-hidden cursor-pointer h-[124px]">
-                      <img
-                        src={svc.img}
-                        alt={svc.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#050d18]/92 via-[#050d18]/60 to-[#050d18]/20" />
-
-                      <div className="absolute inset-0 p-5 flex items-center justify-between">
-                        {/* Left: number + name + desc */}
-                        <div className="flex-1 pr-4">
-                          <div className="flex items-center gap-2.5 mb-1.5">
-                            <span className="text-white/25 text-[10px] font-bold tracking-wider">{svc.num}</span>
-                            <span className="text-[9px] font-bold tracking-widest uppercase text-accent/70 border border-accent/20 px-2 py-0.5 rounded-full">
-                              {svc.tag}
-                            </span>
-                          </div>
-                          <h3 className="text-base font-black text-white leading-tight mb-1">{svc.title}</h3>
-                          <p className="text-white/40 text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
-                            {svc.desc}
-                          </p>
-                        </div>
-
-                        {/* Right: arrow */}
-                        <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/30 group-hover:border-accent/50 group-hover:text-accent transition-all duration-300 shrink-0">
-                          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-          </div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-8 flex justify-end"
-          >
-            <Link href="/hizmetlerimiz">
-              <Button className="bg-accent hover:bg-accent/90 text-white gap-2 font-bold text-xs tracking-widest uppercase px-6">
-                Tüm Hizmetleri Gör <ChevronRight className="w-3.5 h-3.5" />
-              </Button>
-            </Link>
-          </motion.div>
-
+          ))}
         </div>
+
+        {/* Bottom padding */}
+        <div className="h-12" />
       </section>
 
       {/* SİSTEMLİ TEMİZLİK YAKLAŞIMI */}

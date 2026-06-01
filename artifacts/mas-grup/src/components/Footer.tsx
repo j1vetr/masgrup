@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import logoDark from "@assets/logo_dark_1780317107003.png";
 
 export default function Footer() {
   return (
@@ -7,13 +8,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group inline-flex">
-              <div className="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-br-lg rounded-tl-lg">
-                <ChevronRight className="w-5 h-5" />
-              </div>
-              <span className="font-black tracking-tight text-xl">
-                MAS GRUP
-              </span>
+            <Link href="/" className="inline-block mb-4">
+              <img src={logoDark} alt="Mas Grup" className="h-9 w-auto" />
             </Link>
             <p className="text-white/70 italic text-sm mb-6">
               "Temiz alanlar, güçlü yarınlar."

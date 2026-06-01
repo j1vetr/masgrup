@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoLight from "@assets/logo_light_1780317107003.png";
+import logoDark from "@assets/logo_dark_1780317107003.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -20,14 +22,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-3">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 4 C10 4 4 10 4 18 C4 26 10 32 18 32" stroke="#00B4D8" strokeWidth="3" strokeLinecap="round" fill="none"/>
-              <path d="M18 4 L28 18 L18 32" stroke="#0D1B3E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <path d="M10 18 L28 10" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round"/>
-              <path d="M10 18 L28 26" stroke="#00B4D8" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
-            <span className="font-black tracking-tight text-xl text-primary">MAS GRUP</span>
+          <Link href="/">
+            <img src={logoLight} alt="Mas Grup" className="h-9 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -71,7 +67,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-primary z-50 flex flex-col p-6 animate-in fade-in zoom-in-95 duration-200">
           <div className="flex justify-between items-center mb-12">
-            <span className="font-black tracking-tight text-xl text-white">MAS GRUP</span>
+            <img src={logoDark} alt="Mas Grup" className="h-9 w-auto" />
             <button
               className="text-white p-2"
               onClick={() => setMobileMenuOpen(false)}

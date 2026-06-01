@@ -695,36 +695,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-24 bg-gradient-to-br from-primary to-[#00B4D8]">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Profesyonel temizlik hizmeti için bizimle iletişime geçin.
-            </h2>
-            <p className="text-xl text-white/90 mb-12">
-              Mas Grup, yaşam ve çalışma alanlarınız için sistemli, güvenilir ve kaliteli çözümler sunar.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/iletisim">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 h-14 px-8 text-lg font-bold">
-                  Teklif Al
-                </Button>
-              </Link>
-              <Link href="/iletisim">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8 text-lg">
-                  İletişime Geç
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
     </div>
   );

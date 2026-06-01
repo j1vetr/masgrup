@@ -44,7 +44,7 @@ export default function HomePage() {
                 <span className="text-white block">Premium Hizmet.</span>
                 <span className="block" style={{ color: "#0077B6" }}>Kurumsal Güven.</span>
               </h1>
-              <p className="text-white/85 text-sm leading-relaxed mb-7" style={{ maxWidth: 280 }}>
+              <p className="text-white/85 text-sm leading-relaxed mb-7" style={{ maxWidth: 380 }}>
                 Mas Grup, yaşam alanlarınızı ve iş yerlerinizi en yüksek hijyen standartlarında buluşturur.
               </p>
               <div className="flex flex-wrap gap-3">

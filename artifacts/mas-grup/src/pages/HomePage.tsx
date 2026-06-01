@@ -264,16 +264,7 @@ export default function HomePage() {
             </h2>
 
             {/* 2×2 compact feature tiles */}
-            <div className="relative grid grid-cols-2 gap-4 mb-10">
-              {/* Faint logo watermark — bottom center */}
-              <div className="absolute bottom-3 left-0 right-0 flex items-end justify-center pointer-events-none z-0">
-                <img
-                  src={logoDark}
-                  alt=""
-                  className="w-40 select-none"
-                  style={{ opacity: 0.07, filter: "grayscale(1) brightness(3)" }}
-                />
-              </div>
+            <div className="grid grid-cols-2 gap-4 mb-4">
               {[
                 { num: "01", title: "Sistemli Temizlik", desc: "Planlı süreç, sıfır hata payı." },
                 { num: "02", title: "Eğitimli Ekip", desc: "Sürekli eğitim, saha denetimi." },
@@ -296,6 +287,16 @@ export default function HomePage() {
                   <div className="absolute bottom-0 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" style={{ background: "#00B4D8" }} />
                 </motion.div>
               ))}
+            </div>
+
+            {/* Logo — direkt cardların altında */}
+            <div className="flex justify-center mb-10">
+              <img
+                src={logoDark}
+                alt=""
+                className="w-52 select-none pointer-events-none"
+                style={{ opacity: 0.08, filter: "grayscale(1) brightness(3)" }}
+              />
             </div>
 
           </motion.div>

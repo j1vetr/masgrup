@@ -9,7 +9,7 @@ import ana4 from "@assets/ana4_1780314877331.jpeg";
 import ana5 from "@assets/ana5_1780314877332.jpeg";
 import ana6 from "@assets/ana6_1780314877332.jpeg";
 import nedenBg from "@assets/ana3_1780318262914.jpeg";
-import akademiImg from "@assets/ChatGPT_Image_1_Haz_2026_16_16_45_1780319814575.png";
+import akademiImg from "@assets/ana4_1780320177397.jpeg";
 import logoDark from "@assets/logo_dark_1780317107003.png";
 import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.png";
 import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.png";

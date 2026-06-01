@@ -11,6 +11,7 @@ import ana6 from "@assets/ana6_1780314877332.jpeg";
 import nedenBg from "@assets/ana3_1780318262914.jpeg";
 import akademiImg from "@assets/ana4_1780320177397.jpeg";
 import logoDark from "@assets/logo_dark_1780317107003.png";
+import logoLight from "@assets/logo_light_1780317107003.png";
 import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.png";
 import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.png";
 import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_1780318762434.png";
@@ -603,41 +604,69 @@ export default function HomePage() {
       </section>
 
       {/* MANİFESTO */}
-      <section className="py-28 bg-[#0D1B3E] relative overflow-hidden text-white">
-        {/* Logo watermark */}
-        <img
-          src={logoDark}
-          alt=""
-          className="absolute bottom-10 right-10 w-40 opacity-[0.04] pointer-events-none select-none"
-        />
+      <section className="py-20 bg-[#0D1B3E] relative overflow-hidden text-white">
         {/* Dot texture */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
-        {/* Accent glow top */}
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-accent/5 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        {/* Decorative circle top-right */}
+        <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-white/[0.06] pointer-events-none" />
+        <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-accent/[0.08] pointer-events-none" />
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="grid lg:grid-cols-[3fr,2fr] gap-16 items-start">
+          <div className="grid lg:grid-cols-[3fr,2fr] gap-14 items-start">
 
-            {/* Left: quote + paragraphs */}
+            {/* Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="flex flex-col gap-6"
             >
-              <span className="text-accent text-8xl font-serif leading-none block mb-2 select-none">"</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-10">
-                Nasıl çalıştığımız değil, neden çalıştığımız önemlidir.
-              </h2>
-              <div className="space-y-5 text-white/50 text-base leading-relaxed">
+              {/* Quote + label */}
+              <div>
+                <span className="text-accent text-5xl font-serif leading-none block mb-3 select-none">"</span>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-accent text-xs font-bold tracking-[0.28em] uppercase">DEĞERLERİMİZ</span>
+                  <div className="flex-1 h-px bg-accent/40 max-w-[48px]" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-black text-white leading-snug">
+                  Nasıl çalıştığımız değil,{" "}
+                  <span className="text-accent">neden</span>{" "}
+                  çalıştığımız önemlidir.
+                </h2>
+              </div>
+
+              {/* Paragraphs */}
+              <div className="space-y-4 text-white/50 text-sm leading-relaxed">
                 <p>
                   Mas Grup olarak biz, temizlik hizmetini yalnızca bir iş olarak görmüyoruz. Bizim için her yaşam alanı, bir insanın hayatına dokunduğumuz yerdir.
                 </p>
                 <p>
                   Yaptığımız işin temelinde; güven, özen ve saygı vardır. Her detayı önemseriz. Çünkü biliriz ki fark, gözden kaçan yerlerde gizlidir.
                 </p>
+              </div>
+
+              {/* Values row */}
+              <div className="flex items-center gap-6 pt-2">
+                {[
+                  { icon: Shield, label: "Güven" },
+                  { icon: Globe, label: "Özen" },
+                  { icon: UserCircle2, label: "Saygı" },
+                ].map(({ icon: Icon, label }, i) => (
+                  <div key={i} className="flex items-center gap-2 text-white/60 text-sm font-medium">
+                    <Icon className="w-4 h-4 text-accent" />
+                    {label}
+                    {i < 2 && <span className="ml-4 w-px h-4 bg-white/20 block" />}
+                  </div>
+                ))}
+              </div>
+
+              {/* Logo */}
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <img src={logoDark} alt="Mas Grup" className="h-8 w-auto opacity-90" />
+                <span className="text-white/30 text-xs italic">Her detayda, <span className="text-accent not-italic">insan</span> için.</span>
               </div>
             </motion.div>
 
@@ -646,17 +675,16 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:pt-16"
+              className="lg:mt-14"
             >
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
-                {/* Ghost icon art */}
-                <UserCircle2 className="absolute -bottom-4 -right-4 w-32 h-32 text-white/[0.03] pointer-events-none" />
-
-                <div className="w-14 h-14 rounded-2xl bg-accent/15 border border-accent/20 flex items-center justify-center text-accent mb-6">
-                  <UserCircle2 className="w-7 h-7" />
+              <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-7 relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
+                <UserCircle2 className="absolute -bottom-4 -right-4 w-28 h-28 text-white/[0.04] pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/20 flex items-center justify-center text-accent mb-5">
+                  <UserCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">İnsan Odaklılık</h3>
-                <p className="text-white/55 text-sm leading-relaxed">
+                <div className="w-6 h-0.5 bg-accent mb-4" />
+                <h3 className="text-lg font-bold text-white mb-3">İnsan Odaklılık</h3>
+                <p className="text-white/50 text-sm leading-relaxed">
                   Bizim için en büyük değer insandır. Müşterilerimize olduğu kadar, birlikte çalıştığımız ekibe de aynı saygı ve özeni gösteririz. Çünkü güçlü bir ekip, güçlü bir hizmet demektir.
                 </p>
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />

@@ -231,163 +231,120 @@ export default function HomePage() {
 
       </div>{/* end above-fold wrapper */}
 
-      {/* NEDEN MAS GRUP — editorial dark section */}
+      {/* NEDEN MAS GRUP — full-bleed magazine split */}
       <section id="neden" className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
-        {/* Ghost watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <span
-            className="font-black uppercase text-white/[0.025] leading-none tracking-tighter whitespace-nowrap"
-            style={{ fontSize: "clamp(80px, 16vw, 220px)" }}
-          >
-            MAS GRUP
-          </span>
+        {/* Ghost number */}
+        <div className="absolute right-[42%] top-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
+          <span className="font-black text-white/[0.03] leading-none" style={{ fontSize: "clamp(160px, 22vw, 320px)" }}>04</span>
         </div>
 
-        {/* Accent top line */}
-        <div className="h-px w-full" style={{ background: "linear-gradient(to right, transparent, #00B4D8 40%, transparent)" }} />
+        {/* Full-bleed grid — LEFT content | RIGHT image edge-to-edge */}
+        <div className="grid lg:grid-cols-[55%_45%] min-h-[90vh]">
 
-        <div className="relative z-10 container mx-auto px-6 md:px-12 py-24">
-
-          {/* Section label */}
+          {/* LEFT — padded editorial content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            transition={{ duration: 0.7 }}
+            className="relative z-10 flex flex-col justify-center px-10 md:px-16 xl:px-24 py-16"
           >
-            <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.4em] uppercase text-accent">
-              <span className="w-8 h-px bg-accent" />
-              Farkımız
-            </span>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-[1fr_400px] gap-16 xl:gap-24 items-stretch">
-
-            {/* LEFT — editorial heading + numbered feature list + stats */}
-            <div>
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="font-black leading-none tracking-tighter mb-14"
-                style={{ fontSize: "clamp(48px, 7vw, 88px)" }}
-              >
-                <span className="text-white">Neden</span><br />
-                <span style={{ color: "#00B4D8" }}>Mas Grup?</span>
-              </motion.h2>
-
-              {/* Numbered feature rows */}
-              <div className="space-y-0">
-                {[
-                  { num: "01", title: "Sistemli Temizlik", desc: "Her hizmet adım adım planlanır; hiçbir detay rastlantıya bırakılmaz." },
-                  { num: "02", title: "Eğitimli & Denetimli Ekip", desc: "Tüm personelimiz düzenli eğitime tabi tutulur ve her sahada denetlenir." },
-                  { num: "03", title: "Kalite Kontrol Süreci", desc: "Hizmet bitmez, kontrol başlar — her sonuç ölçülür ve belgelenir." },
-                  { num: "04", title: "Sürdürülebilir Standart", desc: "İlk gün kalitemizi son güne taşıyan tutarlı hizmet modeli." },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 }}
-                    className="group flex items-start gap-6 py-6 border-b border-white/[0.07] last:border-0 cursor-default hover:bg-white/[0.025] transition-colors -mx-4 px-4 rounded-lg"
-                  >
-                    <span
-                      className="font-black tabular-nums leading-none shrink-0 transition-colors group-hover:text-accent/60"
-                      style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "rgba(255,255,255,0.08)" }}
-                    >
-                      {item.num}
-                    </span>
-                    <div className="flex-1 pt-1">
-                      <p className="text-white font-black text-base mb-1 tracking-tight">{item.title}</p>
-                      <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-accent shrink-0 mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Stats row */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex gap-10 mt-10 pt-10 border-t border-white/[0.07]"
-              >
-                {[
-                  ["2.500+", "Tamamlanan Proje"],
-                  ["12+", "Yıl Deneyim"],
-                  ["%98", "Memnuniyet Oranı"],
-                ].map(([num, label]) => (
-                  <div key={label}>
-                    <div className="font-black text-3xl leading-none" style={{ color: "#00B4D8" }}>{num}</div>
-                    <div className="text-white/35 text-[10px] font-bold tracking-[0.2em] uppercase mt-2">{label}</div>
-                  </div>
-                ))}
-              </motion.div>
+            {/* Overline */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-6 h-px" style={{ background: "#00B4D8" }} />
+              <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#00B4D8" }}>Farkımız</span>
             </div>
 
-            {/* RIGHT — full-height image, creative treatment */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative h-full min-h-[520px]"
+            {/* Heading */}
+            <h2 className="font-black leading-none tracking-tighter mb-10 text-white" style={{ fontSize: "clamp(40px, 5.5vw, 72px)" }}>
+              Neden<br /><span style={{ color: "#00B4D8" }}>Mas Grup?</span>
+            </h2>
+
+            {/* 2×2 compact feature tiles */}
+            <div className="grid grid-cols-2 gap-3 mb-10">
+              {[
+                { num: "01", title: "Sistemli Temizlik", desc: "Planlı süreç, sıfır hata payı." },
+                { num: "02", title: "Eğitimli Ekip", desc: "Sürekli eğitim, saha denetimi." },
+                { num: "03", title: "Kalite Kontrolü", desc: "Her sonuç ölçülür, belgelenir." },
+                { num: "04", title: "Sürekli Standart", desc: "İlk gün kalitesi, son güne kadar." },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="group relative rounded-xl p-4 cursor-default overflow-hidden border border-white/[0.06] hover:border-accent/30 transition-all duration-400"
+                  style={{ background: "rgba(255,255,255,0.03)" }}
+                >
+                  <span className="absolute top-3 right-3 font-black text-xs tabular-nums" style={{ color: "rgba(255,255,255,0.07)" }}>{item.num}</span>
+                  <div className="w-5 h-0.5 mb-3 rounded-full" style={{ background: "#00B4D8" }} />
+                  <p className="text-white font-black text-sm leading-tight mb-1">{item.title}</p>
+                  <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+                  <div className="absolute bottom-0 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" style={{ background: "#00B4D8" }} />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Stats row */}
+            <div className="flex gap-8 pt-8 border-t border-white/[0.07]">
+              {[["2.500+", "Proje"], ["12+", "Yıl"], ["%98", "Memnuniyet"]].map(([num, label]) => (
+                <div key={label}>
+                  <div className="font-black text-2xl leading-none" style={{ color: "#00B4D8" }}>{num}</div>
+                  <div className="text-white/35 text-[10px] font-bold tracking-widest uppercase mt-1.5">{label}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT — image, full bleed to edge */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="relative"
+          >
+            {/* Diagonal left cut */}
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
-              {/* Image — fills full column height */}
-              <div
-                className="absolute inset-0 overflow-hidden"
-                style={{ clipPath: "polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-              >
-                <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
-                {/* Dark gradient bottom */}
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, rgba(7,16,31,0.25) 55%, transparent 100%)" }} />
-                {/* Subtle scan-line texture */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.018) 3px, rgba(255,255,255,0.018) 4px)",
-                  }}
-                />
-              </div>
+              <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
+              {/* Gradient overlays */}
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #07101f 0%, transparent 30%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, transparent 50%)" }} />
+              {/* Scan lines */}
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.015) 3px,rgba(255,255,255,0.015) 4px)" }} />
+            </div>
 
-              {/* Diagonal left-edge accent bar */}
-              <div
-                className="absolute top-0 bottom-0 w-[3px]"
-                style={{
-                  left: "calc(12% - 1px)",
-                  background: "linear-gradient(to bottom, transparent, #00B4D8 30%, #00B4D8 70%, transparent)",
-                  opacity: 0.7,
-                }}
-              />
+            {/* Accent edge bar */}
+            <div className="absolute top-0 bottom-0 z-10" style={{ left: "calc(8% - 1.5px)", width: "2px", background: "linear-gradient(to bottom, transparent, #00B4D8 25%, #00B4D8 75%, transparent)" }} />
 
-              {/* Floating badge — top left of image (after clip) */}
-              <div
-                className="absolute top-6 z-10 rounded-xl px-4 py-3 text-center shadow-2xl"
-                style={{ left: "calc(12% + 16px)", background: "#00B4D8" }}
-              >
-                <div className="text-white font-black text-xl leading-none">%100</div>
-                <div className="text-white/85 text-[8px] font-bold tracking-widest uppercase mt-1">Kalite Garantisi</div>
-              </div>
+            {/* Floating badge */}
+            <div className="absolute z-20 rounded-xl px-4 py-3 text-center shadow-2xl" style={{ top: "10%", left: "calc(8% + 20px)", background: "#00B4D8" }}>
+              <div className="text-white font-black text-lg leading-none">%100</div>
+              <div className="text-white/80 text-[8px] font-bold tracking-widest uppercase mt-0.5">Kalite</div>
+            </div>
 
-              {/* Bottom quote */}
-              <div className="absolute bottom-0 left-0 right-0 z-10 p-6 pl-[calc(12%+24px)]">
-                <div className="w-5 h-px mb-3" style={{ background: "#00B4D8" }} />
-                <p className="text-white font-semibold text-sm leading-relaxed drop-shadow-lg">
-                  "Sadece görüneni değil,{" "}
-                  <span style={{ color: "#00B4D8" }}>hissedileni değiştiririz."</span>
-                </p>
-              </div>
-            </motion.div>
+            {/* Mid floating stat */}
+            <div className="absolute z-20 rounded-xl px-4 py-3 border border-white/10" style={{ top: "48%", right: "8%", background: "rgba(7,16,31,0.85)", backdropFilter: "blur(12px)" }}>
+              <div className="text-white font-black text-lg leading-none">12+</div>
+              <div className="text-white/50 text-[8px] font-bold tracking-widest uppercase mt-0.5">Yıl Deneyim</div>
+            </div>
 
-          </div>
+            {/* Bottom quote */}
+            <div className="absolute bottom-8 z-20 pl-[calc(8%+20px)] pr-6">
+              <div className="w-4 h-px mb-2.5" style={{ background: "#00B4D8" }} />
+              <p className="text-white/90 font-semibold text-sm leading-relaxed">
+                "Sadece görüneni değil,{" "}
+                <span style={{ color: "#00B4D8" }}>hissedileni değiştiririz."</span>
+              </p>
+            </div>
+          </motion.div>
+
         </div>
-
-        {/* Bottom accent line */}
-        <div className="h-px w-full" style={{ background: "linear-gradient(to right, transparent, #00B4D8 40%, transparent)" }} />
       </section>
 
       {/* HİZMETLERİMİZ PREVIEW — full-width horizontal strip */}

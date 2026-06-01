@@ -264,7 +264,16 @@ export default function HomePage() {
             </h2>
 
             {/* 2×2 compact feature tiles */}
-            <div className="grid grid-cols-2 gap-4 mb-10">
+            <div className="relative grid grid-cols-2 gap-4 mb-10">
+              {/* Faint logo watermark behind cards */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                <img
+                  src={logoDark}
+                  alt=""
+                  className="w-32 select-none"
+                  style={{ opacity: 0.06, filter: "grayscale(1) brightness(3)" }}
+                />
+              </div>
               {[
                 { num: "01", title: "Sistemli Temizlik", desc: "Planlı süreç, sıfır hata payı." },
                 { num: "02", title: "Eğitimli Ekip", desc: "Sürekli eğitim, saha denetimi." },

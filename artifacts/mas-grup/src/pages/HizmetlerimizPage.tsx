@@ -4,9 +4,6 @@ import { ChevronRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import ana7 from "@assets/ana7_1780314877332.jpeg";
-import ana2 from "@assets/ana2_1780314877331.jpeg";
-import ana3 from "@assets/ana3_1780314877331.jpeg";
-import ana5 from "@assets/ana5_1780314877332.jpeg";
 
 export default function HizmetlerimizPage() {
   const services = [
@@ -14,7 +11,7 @@ export default function HizmetlerimizPage() {
       id: "ev-temizligi",
       title: "Ev Temizliği",
       desc: "Yaşam alanlarınızda detaylı, hijyenik ve ferah bir ortam sağlıyoruz. Mutfak, banyo, salon ve yatak odalarında kapsamlı temizlik hizmetleri sunuyoruz. Hijyen protokollerimizle sağlıklı ve ferah bir yaşam ortamı oluşturuyoruz.",
-      image: ana7,
+      imagePosition: "0% 50%",
       features: ["Haftalık/Aylık Periyodik Temizlik", "Derin Temizlik", "Taşınma Öncesi/Sonrası", "Hijyen Paketi"],
       bg: "bg-white",
       reverse: false
@@ -23,7 +20,7 @@ export default function HizmetlerimizPage() {
       id: "ofis-temizligi",
       title: "Ofis Temizliği",
       desc: "Çalışma alanlarınızda verimliliği artıran düzenli ve profesyonel temizlik. Ofis ortamınızın her köşesi, üretkenliğinizi desteklemek için profesyonel ekibimizce hazırlanır.",
-      image: ana2,
+      imagePosition: "33% 50%",
       features: ["Günlük/Haftalık Hizmet", "Toplantı Odası Hazırlığı", "Ortak Alan Temizliği", "Cam ve Cephe Silme"],
       bg: "bg-[#f0f5fa]",
       reverse: true
@@ -32,7 +29,7 @@ export default function HizmetlerimizPage() {
       id: "insaat-sonrasi",
       title: "İnşaat Sonrası Temizlik",
       desc: "İnşaat ve tadilat sonrasında oluşan kir, toz ve artıkları profesyonel ekipmanlarımızla sistematik biçimde temizliyoruz. Her aşamada kalite kontrolü yapıyoruz.",
-      image: ana3,
+      imagePosition: "66% 50%",
       features: ["Kaba İnşaat Temizliği", "İnce Temizlik", "Cam ve Çerçeve Temizliği", "Zemin Parlatma ve Bakımı"],
       bg: "bg-white",
       reverse: false
@@ -41,7 +38,7 @@ export default function HizmetlerimizPage() {
       id: "detay-temizlik",
       title: "Detay Temizlik",
       desc: "Gözden kaçan alanları standart haline getiren özel uygulamalar. Her köşe, her yüzey, her detay — gözden kaçan hiçbir şey kalmaz.",
-      image: ana5,
+      imagePosition: "100% 50%",
       features: ["Halı ve Koltuk Temizliği", "Mutfak Aparatları Temizliği", "Banyo Derin Temizliği", "Özel Yüzey Bakımı"],
       bg: "bg-[#f0f5fa]",
       reverse: true
@@ -86,9 +83,10 @@ export default function HizmetlerimizPage() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-accent/10 translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
                     <img 
-                      src={service.image} 
+                      src={ana7} 
                       alt={service.title} 
                       className="rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
+                      style={{ objectPosition: service.imagePosition }}
                     />
                   </div>
                 </motion.div>

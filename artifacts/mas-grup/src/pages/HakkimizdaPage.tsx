@@ -145,23 +145,81 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* İnsan Odaklılık Image Strip */}
-      <section className="relative h-[40vh] flex items-center justify-center">
-        <div 
+      {/* İnsan Odaklılık */}
+      <section className="py-24 bg-[#f0f5fa]">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">EKİBİMİZ</span>
+              <h2 className="text-4xl font-bold text-primary mb-8">İnsan Odaklılık</h2>
+              <div className="space-y-6 text-lg text-primary/80 leading-relaxed">
+                <p>
+                  Bizim için temizlik, yalnızca bir hizmet değil; insanların yaşam kalitesini doğrudan etkileyen bir sorumluluktur. Bu anlayışla her ekip üyemizi titizlikle seçiyor, sürekli eğitimle destekliyoruz.
+                </p>
+                <p>
+                  Mas Grup ekibi; güvenilir, saygılı ve özenli bireylerden oluşur. Her temizlik uzmanımız Mas Akademi süreçlerinden geçmiş, saha deneyimiyle pekişmiş profesyonellerdir.
+                </p>
+                <p>
+                  Çünkü güçlü bir ekip, güçlü bir hizmet demektir. Ve güçlü bir hizmet, mutlu müşteriler demektir.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-6"
+            >
+              {[
+                { stat: "500+", label: "Eğitimli Personel" },
+                { stat: "10+", label: "Yıl Deneyim" },
+                { stat: "4", label: "Şehirde Hizmet" },
+                { stat: "100%", label: "Memnuniyet Hedefi" }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white p-8 rounded-2xl text-center shadow-sm border border-primary/10"
+                >
+                  <span className="text-4xl font-black text-accent block mb-2">{item.stat}</span>
+                  <span className="text-sm font-medium text-primary/70">{item.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Manifesto */}
+      <section className="relative py-32 flex items-center justify-center overflow-hidden">
+        <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: `url(${ana5})` }}
         />
-        <div className="absolute inset-0 z-0 bg-primary/85" />
-        
-        <div className="container relative z-10 mx-auto px-4 text-center">
+        <div className="absolute inset-0 z-0 bg-primary/88" />
+
+        <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white italic">
-              "Çünkü güçlü bir ekip, güçlü bir hizmet demektir."
+            <span className="text-accent text-sm font-bold tracking-widest uppercase">MANİFESTOMUZ</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+              "Bizim için temizlik bir görev değil,<br />bir yaşam felsefesidir."
             </h2>
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
+              Her alanda titizlik, her müşteride güven, her hizmette özen. Mas Grup olarak sunduğumuz yalnızca temiz bir alan değil; huzurlu, sağlıklı ve güvenilir bir yaşam ortamıdır.
+            </p>
           </motion.div>
         </div>
       </section>

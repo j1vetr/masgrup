@@ -167,6 +167,29 @@ export default function KurumsalPage() {
         </div>
       </section>
 
+      {/* Marka Manifestosu */}
+      <section className="py-24 bg-primary text-white">
+        <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <span className="text-accent text-sm font-bold tracking-widest uppercase">MANİFESTOMUZ</span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+              Temizlik bir detay değil,<br />bir standarttır.
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed max-w-3xl mx-auto">
+              Mas Grup olarak her projeye aynı ciddiyetle yaklaşıyoruz. Büyük ya da küçük, kurumsal ya da bireysel — her müşterimize sunduğumuz hizmet aynı kalite standartlarını taşır. Çünkü bize göre temizlik; güven, saygı ve özenin somut yansımasıdır.
+            </p>
+            <p className="text-white/70 text-base leading-relaxed max-w-2xl mx-auto italic">
+              "Temiz alanlar, güçlü yarınlar." — Mas Grup
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Referanslarımız Placeholder */}
       <section className="py-24 bg-[#f0f5fa]">
         <div className="container mx-auto px-4 md:px-8 text-center">

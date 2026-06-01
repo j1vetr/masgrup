@@ -180,11 +180,11 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-y border-white/[0.06]" style={{ background: "#07101f" }}>
         {/* Left label pin */}
         <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center px-5 md:px-8"
-          style={{ background: "linear-gradient(to right, #07101f 75%, transparent)" }}>
-          <span className="text-white/25 text-[9px] font-bold tracking-[0.28em] uppercase whitespace-nowrap">
+          style={{ background: "linear-gradient(to right, #07101f 82%, transparent)" }}>
+          <span className="text-white/60 text-[10px] font-black tracking-[0.28em] uppercase whitespace-nowrap">
             Hizmet Alanlarımız
           </span>
-          <div className="w-px h-6 bg-white/10 ml-5" />
+          <div className="w-px h-6 bg-white/15 ml-5" />
         </div>
 
         {/* Marquee track — starts right after the | separator */}

@@ -232,7 +232,7 @@ export default function HomePage() {
       </div>{/* end above-fold wrapper */}
 
       {/* NEDEN MAS GRUP — editorial dark section */}
-      <section className="relative overflow-hidden" style={{ background: "#07101f" }}>
+      <section id="neden" className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
         {/* Ghost watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -262,7 +262,7 @@ export default function HomePage() {
             </span>
           </motion.div>
 
-          <div className="grid lg:grid-cols-[1fr_400px] gap-16 xl:gap-24 items-start">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-16 xl:gap-24 items-stretch">
 
             {/* LEFT — editorial heading + numbered feature list + stats */}
             <div>
@@ -329,43 +329,58 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* RIGHT — tall image with overlays */}
+            {/* RIGHT — full-height image, creative treatment */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
+              transition={{ duration: 0.8 }}
+              className="relative h-full min-h-[520px]"
             >
-              {/* Image */}
-              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, rgba(7,16,31,0.3) 50%, transparent 100%)" }} />
-              </div>
-
-              {/* Floating badge — top right */}
+              {/* Image — fills full column height */}
               <div
-                className="absolute -top-4 -right-4 rounded-2xl px-5 py-4 text-center shadow-2xl"
-                style={{ background: "#00B4D8" }}
+                className="absolute inset-0 overflow-hidden"
+                style={{ clipPath: "polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
               >
-                <div className="text-white font-black text-2xl leading-none">%100</div>
-                <div className="text-white/80 text-[9px] font-bold tracking-widest uppercase mt-1">Kalite Garantisi</div>
+                <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
+                {/* Dark gradient bottom */}
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, rgba(7,16,31,0.25) 55%, transparent 100%)" }} />
+                {/* Subtle scan-line texture */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.018) 3px, rgba(255,255,255,0.018) 4px)",
+                  }}
+                />
               </div>
 
-              {/* Bottom quote overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="w-6 h-px bg-accent mb-3" />
-                <p className="text-white font-semibold text-sm leading-relaxed">
-                  "Temizlik, sadece görüneni değil{" "}
-                  <span style={{ color: "#00B4D8" }}>hissedileni değiştirir."</span>
+              {/* Diagonal left-edge accent bar */}
+              <div
+                className="absolute top-0 bottom-0 w-[3px]"
+                style={{
+                  left: "calc(12% - 1px)",
+                  background: "linear-gradient(to bottom, transparent, #00B4D8 30%, #00B4D8 70%, transparent)",
+                  opacity: 0.7,
+                }}
+              />
+
+              {/* Floating badge — top left of image (after clip) */}
+              <div
+                className="absolute top-6 z-10 rounded-xl px-4 py-3 text-center shadow-2xl"
+                style={{ left: "calc(12% + 16px)", background: "#00B4D8" }}
+              >
+                <div className="text-white font-black text-xl leading-none">%100</div>
+                <div className="text-white/85 text-[8px] font-bold tracking-widest uppercase mt-1">Kalite Garantisi</div>
+              </div>
+
+              {/* Bottom quote */}
+              <div className="absolute bottom-0 left-0 right-0 z-10 p-6 pl-[calc(12%+24px)]">
+                <div className="w-5 h-px mb-3" style={{ background: "#00B4D8" }} />
+                <p className="text-white font-semibold text-sm leading-relaxed drop-shadow-lg">
+                  "Sadece görüneni değil,{" "}
+                  <span style={{ color: "#00B4D8" }}>hissedileni değiştiririz."</span>
                 </p>
               </div>
-
-              {/* Decorative corner accent */}
-              <div
-                className="absolute -bottom-3 -left-3 w-16 h-16 rounded-xl opacity-60"
-                style={{ background: "linear-gradient(135deg, #00B4D8, transparent)" }}
-              />
             </motion.div>
 
           </div>

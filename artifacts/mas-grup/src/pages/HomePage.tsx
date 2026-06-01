@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, ArrowRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,12 @@ import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_17803187624
 import svcDetay from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(4)_1780318762433.png";
 
 export default function HomePage() {
+  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setActiveStep(s => (s + 1) % 5), 1800);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <div className="w-full">
 
@@ -515,34 +522,53 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="relative p-8 group hover:bg-white/[0.04] transition-colors duration-400 overflow-hidden"
+                className="relative p-8 overflow-hidden transition-colors duration-500"
+                style={{ background: activeStep === idx ? "rgba(0,180,216,0.06)" : "transparent" }}
               >
-                {/* Ghost number art */}
-                <span className="absolute bottom-0 right-2 text-[110px] font-black leading-none select-none pointer-events-none text-white/[0.03] group-hover:text-white/[0.06] transition-colors duration-500">
+                {/* Ghost number */}
+                <span className="absolute bottom-0 right-2 text-[110px] font-black leading-none select-none pointer-events-none transition-colors duration-500"
+                  style={{ color: activeStep === idx ? "rgba(0,180,216,0.08)" : "rgba(255,255,255,0.025)" }}>
                   {String(idx + 1).padStart(2, "0")}
                 </span>
 
                 {/* Step label + accent bar */}
                 <div className="flex items-center gap-3 mb-7">
-                  <div className="w-0.5 h-7 bg-accent rounded-full" />
-                  <span className="text-accent/50 text-[11px] font-bold tracking-[0.25em] uppercase">
+                  <div className="w-0.5 h-7 rounded-full transition-colors duration-500"
+                    style={{ background: activeStep === idx ? "#00B4D8" : "rgba(0,180,216,0.25)" }} />
+                  <span className="text-[11px] font-bold tracking-[0.25em] uppercase transition-colors duration-500"
+                    style={{ color: activeStep === idx ? "#00B4D8" : "rgba(0,180,216,0.4)" }}>
                     {String(idx + 1).padStart(2, "0")} / 05
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent mb-6 group-hover:border-accent/30 group-hover:bg-accent/10 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-500"
+                  style={{
+                    background: activeStep === idx ? "rgba(0,180,216,0.15)" : "rgba(255,255,255,0.04)",
+                    border: activeStep === idx ? "1px solid rgba(0,180,216,0.4)" : "1px solid rgba(255,255,255,0.1)",
+                    color: "#00B4D8",
+                  }}>
                   <step.icon className="w-6 h-6" />
                 </div>
 
                 {/* Title */}
-                <h4 className="text-base font-bold mb-3 leading-snug">{step.title}</h4>
+                <h4 className="text-base font-bold mb-3 leading-snug transition-colors duration-500"
+                  style={{ color: activeStep === idx ? "#ffffff" : "rgba(255,255,255,0.7)" }}>
+                  {step.title}
+                </h4>
 
                 {/* Description */}
-                <p className="text-white/35 text-xs leading-relaxed">{step.desc}</p>
+                <p className="text-xs leading-relaxed transition-colors duration-500"
+                  style={{ color: activeStep === idx ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.3)" }}>
+                  {step.desc}
+                </p>
 
-                {/* Bottom hover sweep */}
-                <div className="absolute bottom-0 left-0 h-0.5 w-full bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                {/* Bottom sweep — auto loop */}
+                <div className="absolute bottom-0 left-0 h-0.5 w-full origin-left transition-transform duration-700"
+                  style={{
+                    background: "#00B4D8",
+                    transform: activeStep === idx ? "scaleX(1)" : "scaleX(0)",
+                  }} />
               </motion.div>
             ))}
           </div>

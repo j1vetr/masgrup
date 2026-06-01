@@ -72,8 +72,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-white/50 text-xs">
-          <p>© 2025 Mas Grup. Tüm hakları saklıdır.</p>
+        <div className="pt-8 border-t border-white/10 text-center text-white/50 text-xs space-y-1.5">
+          <p>© 2026 Mas Grup. Tüm Hakları Saklıdır.</p>
+          <p>
+            Tasarım &amp; Geliştirici :{" "}
+            <a
+              href="https://toov.com.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-accent transition-colors duration-200 font-semibold"
+            >
+              TOOV
+            </a>
+          </p>
         </div>
       </div>
     </footer>

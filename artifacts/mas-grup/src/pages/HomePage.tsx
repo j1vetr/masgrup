@@ -299,7 +299,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
         {/* Header row */}
-        <div className="px-6 md:px-12 pt-16 pb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div className="px-6 md:px-12 pt-16 pb-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -309,22 +309,6 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
               Profesyonel <span className="text-accent">Hizmetler</span>
             </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="flex items-center gap-4"
-          >
-            <p className="text-white/30 text-xs leading-relaxed max-w-[180px] sm:text-right hidden sm:block">
-              Her alana özel, planlı ve denetimli temizlik.
-            </p>
-            <Link href="/hizmetlerimiz">
-              <button className="text-[10px] font-bold tracking-widest uppercase text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 px-4 py-2 rounded-full">
-                Tümünü Gör →
-              </button>
-            </Link>
           </motion.div>
         </div>
 

@@ -265,13 +265,13 @@ export default function HomePage() {
 
             {/* 2×2 compact feature tiles */}
             <div className="relative grid grid-cols-2 gap-4 mb-10">
-              {/* Faint logo watermark behind cards */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+              {/* Faint logo watermark — bottom center */}
+              <div className="absolute bottom-3 left-0 right-0 flex items-end justify-center pointer-events-none z-0">
                 <img
                   src={logoDark}
                   alt=""
-                  className="w-32 select-none"
-                  style={{ opacity: 0.06, filter: "grayscale(1) brightness(3)" }}
+                  className="w-40 select-none"
+                  style={{ opacity: 0.07, filter: "grayscale(1) brightness(3)" }}
                 />
               </div>
               {[

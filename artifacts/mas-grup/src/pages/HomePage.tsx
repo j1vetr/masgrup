@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
+import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, ArrowRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import ana1 from "@assets/ana5_1780320877135.jpeg";
@@ -231,100 +231,148 @@ export default function HomePage() {
 
       </div>{/* end above-fold wrapper */}
 
-      {/* NEDEN MAS GRUP? */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      {/* NEDEN MAS GRUP — editorial dark section */}
+      <section className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
-            {/* LEFT — tall image card with overlay items */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl"
-              style={{ minHeight: 540 }}
-            >
-              <img
-                src={nedenBg}
-                alt="Mas Grup Bina"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/95 via-[#0D1B3E]/40 to-transparent" />
+        {/* Ghost watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+          <span
+            className="font-black uppercase text-white/[0.025] leading-none tracking-tighter whitespace-nowrap"
+            style={{ fontSize: "clamp(80px, 16vw, 220px)" }}
+          >
+            MAS GRUP
+          </span>
+        </div>
 
-              <div className="relative z-10 flex flex-col justify-end h-full p-8 pt-[320px]">
+        {/* Accent top line */}
+        <div className="h-px w-full" style={{ background: "linear-gradient(to right, transparent, #00B4D8 40%, transparent)" }} />
+
+        <div className="relative z-10 container mx-auto px-6 md:px-12 py-24">
+
+          {/* Section label */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.4em] uppercase text-accent">
+              <span className="w-8 h-px bg-accent" />
+              Farkımız
+            </span>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-[1fr_400px] gap-16 xl:gap-24 items-start">
+
+            {/* LEFT — editorial heading + numbered feature list + stats */}
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="font-black leading-none tracking-tighter mb-14"
+                style={{ fontSize: "clamp(48px, 7vw, 88px)" }}
+              >
+                <span className="text-white">Neden</span><br />
+                <span style={{ color: "#00B4D8" }}>Mas Grup?</span>
+              </motion.h2>
+
+              {/* Numbered feature rows */}
+              <div className="space-y-0">
                 {[
-                  { icon: Users, title: "Eğitimli Ekip", desc: "Alanında uzman ve düzenli eğitim alan ekip." },
-                  { icon: Shield, title: "Denetimli Hizmet", desc: "Her aşama kontrol edilir, kalite standartları sürekli korunur." },
-                  { icon: Settings, title: "Sistemli Yaklaşım", desc: "Planlı süreç, doğru uygulama, garantili sonuç." },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 py-4 border-b border-white/10 last:border-0">
-                    <div className="w-9 h-9 rounded-lg bg-accent/20 flex items-center justify-center text-accent shrink-0 mt-0.5">
-                      <item.icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-white text-sm">{item.title}</p>
-                      <p className="text-white/60 text-xs leading-relaxed mt-0.5">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* RIGHT — heading, 2×2 cards, quote */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="space-y-8"
-            >
-              <div>
-                <span className="text-accent font-bold tracking-widest uppercase text-xs mb-3 block">Farkımız</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                  Neden <span className="text-accent">Mas Grup?</span>
-                </h2>
-                <p className="text-primary/60 text-base leading-relaxed">
-                  Mas Grup, standart temizlik anlayışının ötesinde bir hizmet sunar.<br />
-                  Her süreç planlı, her detay kontrollüdür.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: CalendarDays, title: "Sistemli Temizlik Yaklaşımı", desc: "Her hizmet belirli bir plan ve sistem dahilinde ilerler." },
-                  { icon: Users, title: "Eğitimli ve Denetimli Ekip", desc: "Tüm ekip üyeleri düzenli eğitimlerden geçer ve denetlenir." },
-                  { icon: Shield, title: "Kalite Kontrol Süreci", desc: "Hizmet sadece uygulanmaz, sonuçlar da kontrol edilir." },
-                  { icon: Leaf, title: "Sürdürülebilir Hizmet Standardı", desc: "Her müşterimizde aynı kaliteyi sunan sürdürülebilir hizmet modeli." },
+                  { num: "01", title: "Sistemli Temizlik", desc: "Her hizmet adım adım planlanır; hiçbir detay rastlantıya bırakılmaz." },
+                  { num: "02", title: "Eğitimli & Denetimli Ekip", desc: "Tüm personelimiz düzenli eğitime tabi tutulur ve her sahada denetlenir." },
+                  { num: "03", title: "Kalite Kontrol Süreci", desc: "Hizmet bitmez, kontrol başlar — her sonuç ölçülür ve belgelenir." },
+                  { num: "04", title: "Sürdürülebilir Standart", desc: "İlk gün kalitemizi son güne taşıyan tutarlı hizmet modeli." },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="bg-white border border-primary/10 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                    transition={{ delay: i * 0.07 }}
+                    className="group flex items-start gap-6 py-6 border-b border-white/[0.07] last:border-0 cursor-default hover:bg-white/[0.025] transition-colors -mx-4 px-4 rounded-lg"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-3">
-                      <item.icon className="w-5 h-5" />
+                    <span
+                      className="font-black tabular-nums leading-none shrink-0 transition-colors group-hover:text-accent/60"
+                      style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "rgba(255,255,255,0.08)" }}
+                    >
+                      {item.num}
+                    </span>
+                    <div className="flex-1 pt-1">
+                      <p className="text-white font-black text-base mb-1 tracking-tight">{item.title}</p>
+                      <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                    <p className="font-bold text-primary text-sm leading-snug mb-2">{item.title}</p>
-                    <p className="text-primary/55 text-xs leading-relaxed">{item.desc}</p>
+                    <ArrowRight className="w-4 h-4 text-accent shrink-0 mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.div>
                 ))}
               </div>
 
-              {/* Quote card */}
-              <div className="relative bg-[#f0f7ff] border border-accent/15 rounded-2xl p-6 overflow-hidden">
-                <span className="absolute top-3 left-5 text-accent text-5xl font-serif leading-none select-none">"</span>
-                <p className="text-primary font-semibold text-base leading-relaxed pl-8 pt-2">
-                  'Bizim için temizlik, sadece görüneni değil,{" "}
-                  <span className="text-accent">hissedileni değiştirmektir.</span>'
-                </p>
-                <Leaf className="absolute bottom-3 right-4 w-10 h-10 text-accent/15" />
+              {/* Stats row */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="flex gap-10 mt-10 pt-10 border-t border-white/[0.07]"
+              >
+                {[
+                  ["2.500+", "Tamamlanan Proje"],
+                  ["12+", "Yıl Deneyim"],
+                  ["%98", "Memnuniyet Oranı"],
+                ].map(([num, label]) => (
+                  <div key={label}>
+                    <div className="font-black text-3xl leading-none" style={{ color: "#00B4D8" }}>{num}</div>
+                    <div className="text-white/35 text-[10px] font-bold tracking-[0.2em] uppercase mt-2">{label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* RIGHT — tall image with overlays */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, rgba(7,16,31,0.3) 50%, transparent 100%)" }} />
               </div>
+
+              {/* Floating badge — top right */}
+              <div
+                className="absolute -top-4 -right-4 rounded-2xl px-5 py-4 text-center shadow-2xl"
+                style={{ background: "#00B4D8" }}
+              >
+                <div className="text-white font-black text-2xl leading-none">%100</div>
+                <div className="text-white/80 text-[9px] font-bold tracking-widest uppercase mt-1">Kalite Garantisi</div>
+              </div>
+
+              {/* Bottom quote overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="w-6 h-px bg-accent mb-3" />
+                <p className="text-white font-semibold text-sm leading-relaxed">
+                  "Temizlik, sadece görüneni değil{" "}
+                  <span style={{ color: "#00B4D8" }}>hissedileni değiştirir."</span>
+                </p>
+              </div>
+
+              {/* Decorative corner accent */}
+              <div
+                className="absolute -bottom-3 -left-3 w-16 h-16 rounded-xl opacity-60"
+                style={{ background: "linear-gradient(135deg, #00B4D8, transparent)" }}
+              />
             </motion.div>
 
           </div>
         </div>
+
+        {/* Bottom accent line */}
+        <div className="h-px w-full" style={{ background: "linear-gradient(to right, transparent, #00B4D8 40%, transparent)" }} />
       </section>
 
       {/* HİZMETLERİMİZ PREVIEW — full-width horizontal strip */}

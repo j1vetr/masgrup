@@ -69,7 +69,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{ backgroundImage: `url(${ana3})` }}
           />
-          <div className="absolute inset-0 bg-primary/91" />
+          <div className="absolute inset-0 bg-[#050d1a]/91" />
           <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -108,7 +108,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{ backgroundImage: `url(${ana4})` }}
           />
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-[#050d1a]/80" />
           <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -140,7 +140,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{ backgroundImage: `url(${ana5})` }}
           />
-          <div className="absolute inset-0 bg-primary/82" />
+          <div className="absolute inset-0 bg-[#050d1a]/82" />
           <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-[300px]">
             <div>
               <div className="flex items-center gap-3 mb-6">

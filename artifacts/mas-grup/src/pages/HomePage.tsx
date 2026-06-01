@@ -38,14 +38,14 @@ export default function HomePage() {
               <h1 className="font-black leading-[1.18] mb-4" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
                 <span className="text-white block">Eğitimli Ekip.</span>
                 <span className="text-white block">Premium Hizmet.</span>
-                <span className="text-accent block">Kurumsal Güven.</span>
+                <span className="block" style={{ color: "#0077B6" }}>Kurumsal Güven.</span>
               </h1>
               <p className="text-white/85 text-sm leading-relaxed mb-7" style={{ maxWidth: 280 }}>
                 Mas Grup, yaşam alanlarınızı ve iş yerlerinizi en yüksek hijyen standartlarında buluşturur.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/hizmetlerimiz">
-                  <Button className="bg-accent hover:bg-accent/90 text-white font-bold tracking-wide text-sm px-5 h-10">
+                  <Button className="text-white font-bold tracking-wide text-sm px-5 h-10" style={{ backgroundColor: "#0077B6" }}>
                     HİZMETLERİMİZ <ChevronRight className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </Link>

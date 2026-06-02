@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "le2A2bT7kQqfVKM-GhkIl"
+uri = "file://attached_assets/hizmet_ev_temizligi.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "8sE7gFEvzeTO_GtOdK7Em"
+uri = "file://attached_assets/hizmet_ofis_temizligi.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "ZNDzHy_UfbrKUnI7bC1qs"
+uri = "file://attached_assets/hizmet_insaat_sonrasi.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "nLxCtukKy1zpSrSq8e27b"
+uri = "file://attached_assets/hizmet_detay_temizlik.png"
+type = "image"
+title = "generated_image"

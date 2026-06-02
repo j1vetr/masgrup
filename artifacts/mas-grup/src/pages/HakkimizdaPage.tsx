@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -18,6 +18,16 @@ export default function HakkimizdaPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
+  const [activeValue, setActiveValue] = useState(0);
+  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveValue(prev => (prev + 1) % 4);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="w-full overflow-hidden">
@@ -227,12 +237,11 @@ export default function HakkimizdaPage() {
             ].map((val, i) => (
               <motion.div
                 key={i}
-                className="relative bg-white overflow-hidden"
+                className="relative bg-white overflow-hidden cursor-default"
                 initial="rest"
-                whileHover="hover"
-                animate="rest"
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                animate={hoveredValue === i || (hoveredValue === null && activeValue === i) ? "hover" : "rest"}
+                onMouseEnter={() => setHoveredValue(i)}
+                onMouseLeave={() => setHoveredValue(null)}
               >
                 {/* Diagonal clip-path overlay — sweeps from TL-BR diagonal outward */}
                 <motion.div

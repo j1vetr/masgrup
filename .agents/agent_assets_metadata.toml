@@ -30,3 +30,27 @@ id = "ABbAgRmHdHQCfI7xt7IEr"
 uri = "file://attached_assets/hizmet_saygi.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "YmZD4F_Wp1px2vTducrtA"
+uri = "file://attached_assets/akademi_hero.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_B_RxkA6yKQx4nY2_wdJ8"
+uri = "file://attached_assets/akademi_hijyen.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "X3tegYoIwZYflKMfMOAjZ"
+uri = "file://attached_assets/akademi_sertifika.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "UHAlkUKJ4b84ufXsJGqB8"
+uri = "file://attached_assets/akademi_egitim.png"
+type = "image"
+title = "generated_image"

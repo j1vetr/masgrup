@@ -24,3 +24,9 @@ id = "nLxCtukKy1zpSrSq8e27b"
 uri = "file://attached_assets/hizmet_detay_temizlik.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "ABbAgRmHdHQCfI7xt7IEr"
+uri = "file://attached_assets/hizmet_saygi.png"
+type = "image"
+title = "generated_image"

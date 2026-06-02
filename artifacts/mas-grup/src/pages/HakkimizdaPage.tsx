@@ -9,8 +9,8 @@ import imgHikaye from "@assets/ana4_1780314877331.jpeg";
 import img2      from "@assets/ana3_1780314877331.jpeg";
 import img3      from "@assets/ana6_1780314877332.jpeg";
 import img4      from "@assets/ana2_1780317265640.jpeg";
-import img5      from "@assets/ana1_1780320498300.jpeg";
 import imgEkip   from "@assets/ana5_1780317282679.jpeg";
+import imgSaygi  from "@assets/hizmet_saygi.png";
 
 export default function HakkimizdaPage() {
   useEffect(() => { document.title = "Hakkımızda | Mas Grup"; }, []);
@@ -232,7 +232,7 @@ export default function HakkimizdaPage() {
               {
                 num: "04", title: "Saygı", sub: "Respect",
                 desc: "Müşterilerimizin alanlarına ve ekibimizin emeğine eşit değer ve saygı gösteririz. İnsan odaklı yaklaşım vazgeçilmezimizdir.",
-                img: img5,
+                img: imgSaygi,
               },
             ].map((val, i) => (
               <motion.div

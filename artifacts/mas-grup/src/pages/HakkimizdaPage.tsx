@@ -82,16 +82,7 @@ export default function HakkimizdaPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 items-end">
             <motion.div
-              className="lg:col-span-1 flex justify-start lg:justify-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-primary/10 font-black text-7xl lg:text-9xl select-none leading-none">01</span>
-            </motion.div>
-
-            <motion.div
-              className="lg:col-span-11"
+              className="lg:col-span-12"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

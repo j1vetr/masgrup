@@ -1,145 +1,281 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { Shield, Heart, Star, Award, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-import ana5 from "@assets/ana5_1780314877332.jpeg";
+import hero   from "@assets/ana5_1780320877135.jpeg";
+import img1   from "@assets/ana1_1780320498300.jpeg";
+import img2   from "@assets/ana3_1780314877331.jpeg";
+import img3   from "@assets/ana6_1780314877332.jpeg";
+import img4   from "@assets/ana2_1780317265640.jpeg";
 
 export default function HakkimizdaPage() {
   useEffect(() => { document.title = "Hakkımızda | Mas Grup"; }, []);
+
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
-    <div className="w-full">
-      {/* Page Hero */}
-      <section className="relative h-[50vh] flex items-center pt-20">
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${ana5})` }}
-        />
-        <div className="absolute inset-0 z-0 bg-primary/80" />
-        
-        <div className="container relative z-10 mx-auto px-4 md:px-8">
+    <div className="w-full overflow-hidden">
+
+      {/* ── 01 HERO ── */}
+      <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#0D1B3E]">
+
+        {/* Parallax photo — right 60% */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{ y: heroY }}
+        >
+          <img src={hero} alt="Mas Grup" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B3E] via-[#0D1B3E]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/80 via-transparent to-[#0D1B3E]/30" />
+        </motion.div>
+
+        {/* Ghost label — top right */}
+        <div className="absolute top-28 right-8 md:right-16 z-10 text-right">
+          <span className="text-white/10 font-black text-[clamp(80px,14vw,180px)] leading-none select-none tracking-tighter">
+            MAS
+          </span>
+        </div>
+
+        {/* Main content — bottom left */}
+        <div className="relative z-10 pb-20 px-8 md:px-16 max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-2 text-white/70 text-sm font-medium mb-6 uppercase tracking-wider">
-              <Link href="/" className="hover:text-accent transition-colors">Ana Sayfa</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-white">Hakkımızda</span>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-8 h-px bg-accent" />
+              <span className="text-accent text-[10px] font-bold tracking-[0.35em] uppercase">Biz Kimiz</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Hakkımızda</h1>
-            <p className="text-xl text-white/90 font-light max-w-2xl">
-              Güven, özen ve saygıyla hizmet eden bir marka.
+
+            <h1 className="text-white font-black leading-[0.92] tracking-tight mb-8"
+              style={{ fontSize: "clamp(52px,8vw,112px)" }}>
+              Temizliği<br />
+              <em className="not-italic text-accent">Felsefeye</em><br />
+              Dönüştürüyoruz.
+            </h1>
+
+            <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-xl">
+              Mas Grup; standart hizmetin ötesinde, detay odaklı ve sistemli bir temizlik anlayışı sunar.
             </p>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 right-8 md:right-16 z-10 flex flex-col items-center gap-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          <span className="text-white/30 text-[9px] tracking-[0.3em] uppercase font-bold rotate-90 origin-center mb-6">Keşfet</span>
+          <div className="w-px h-16 bg-gradient-to-b from-accent to-transparent" />
+        </motion.div>
+      </section>
+
+      {/* ── 02 MANİFESTO ── */}
+      <section className="bg-white py-24 md:py-36 px-8 md:px-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <motion.div
+              className="lg:col-span-1 flex justify-start lg:justify-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-primary/10 font-black text-7xl lg:text-9xl select-none leading-none">01</span>
+            </motion.div>
+
+            <motion.div
+              className="lg:col-span-11"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="font-black text-primary leading-[1.05] tracking-tight"
+                style={{ fontSize: "clamp(28px,5vw,68px)" }}>
+                "Her yaşam alanı, bir insanın{" "}
+                <em className="not-italic text-accent">hayatına dokunduğumuz</em>{" "}
+                yerdir — bu bilinçle hizmet ediyoruz."
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="mt-16 pt-16 border-t border-primary/10 grid md:grid-cols-3 gap-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            {[
+              { label: "Misyon", text: "Yaşam ve çalışma alanlarına sistemli, hijyenik ve kaliteli temizlik çözümleri sunmak; müşterilerin güvenini hizmetlerimizle kazanmak." },
+              { label: "Vizyon", text: "Türkiye'nin en güvenilir ve tercih edilen profesyonel temizlik markası olmak; eğitimli ekip ve yenilikçi hizmet anlayışıyla sektörde lider konuma gelmek." },
+              { label: "Felsefe", text: "Temizlik bize göre bir iş değil, bir yaşam felsefesidir. Her detayda titizlik, her müşteride güven, her hizmette sonsuz özen." },
+            ].map((item, i) => (
+              <div key={i}>
+                <span className="text-accent text-[10px] font-black tracking-[0.3em] uppercase block mb-4">{item.label}</span>
+                <p className="text-primary/70 leading-relaxed text-sm">{item.text}</p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Hikayemiz */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <motion.div 
-              className="lg:col-span-7"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-primary mb-8">Hikayemiz</h2>
-              <div className="space-y-6 text-lg text-primary/80 leading-relaxed">
-                <p>
-                  Mas Grup, profesyonel temizlik sektöründe fark yaratmak amacıyla kurulmuştur. Standart hizmetin ötesine geçerek müşterilerimize sistemli, denetimli ve kalite odaklı bir deneyim sunmayı hedefliyoruz.
-                </p>
-                <p>
-                  Her hizmetimiz, aynı titizlik ve özenle yürütülür. Bizim için her alan, sadece temizlenmesi gereken bir mekan değil, insanların yaşamını ve çalışmalarını sürdürdüğü değerli alanlardır. Bu anlayış, bizi sektörde güvenilir ve tercih edilen bir marka haline getirmiştir.
-                </p>
-              </div>
-            </motion.div>
+      {/* ── 03 HİKAYEMİZ — magazine split ── */}
+      <section className="grid lg:grid-cols-2 min-h-[90vh]">
 
-            <motion.div 
-              className="lg:col-span-5 grid gap-4"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              {[
-                { stat: "500+", label: "Mutlu Müşteri" },
-                { stat: "10+", label: "Yıl Deneyim" },
-                { stat: "4", label: "Şehirde Hizmet" }
-              ].map((item, i) => (
-                <div key={i} className="bg-primary text-white p-8 rounded-2xl flex items-center gap-6">
-                  <span className="text-5xl font-black text-accent">{item.stat}</span>
-                  <span className="text-lg font-medium">{item.label}</span>
-                </div>
-              ))}
-            </motion.div>
+        {/* Left — photo */}
+        <motion.div
+          className="relative overflow-hidden min-h-[50vh] lg:min-h-full"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <img src={img1} alt="Hikayemiz" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B3E]/40 to-transparent" />
+
+          {/* Floating tag */}
+          <div className="absolute bottom-8 left-8">
+            <div className="bg-accent px-4 py-2 inline-block">
+              <span className="text-white font-black text-xs tracking-[0.25em] uppercase">Hikayemiz</span>
+            </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Right — text */}
+        <motion.div
+          className="bg-[#0D1B3E] flex flex-col justify-center px-10 md:px-16 py-20"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="text-white/10 font-black text-8xl leading-none select-none mb-4">02</span>
+
+          <h2 className="text-white font-black text-4xl md:text-5xl leading-tight tracking-tight mb-8">
+            Standartın<br />
+            <span className="text-accent">Ötesinde</span><br />
+            Bir Hizmet
+          </h2>
+
+          <div className="space-y-5 text-white/60 leading-relaxed text-[15px]">
+            <p>
+              Mas Grup, profesyonel temizlik sektöründe fark yaratmak amacıyla kurulmuştur. Standart hizmetin ötesine geçerek müşterilerimize sistemli, denetimli ve kalite odaklı bir deneyim sunmayı hedefliyoruz.
+            </p>
+            <p>
+              Her hizmetimiz, aynı titizlik ve özenle yürütülür. Bizim için her alan, sadece temizlenmesi gereken bir mekan değil, insanların yaşamını ve çalışmalarını sürdürdüğü değerli alanlardır.
+            </p>
+            <p>
+              Bu anlayış, bizi sektörde güvenilir ve tercih edilen bir marka haline getirmiştir. Çünkü biz, temizliği bir sorumluluk olarak değil, bir sanat olarak icra ediyoruz.
+            </p>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="w-10 h-px bg-accent mb-3" />
+            <p className="text-white/30 text-xs font-bold tracking-widest uppercase">Mas Grup — Profesyonel Temizlik</p>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Misyon & Vizyon */}
-      <section className="py-12 bg-[#f0f5fa]">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div 
+      {/* ── 04 DEĞERLERİMİZ — editorial grid ── */}
+      <section className="bg-white py-24 md:py-36 px-8 md:px-16">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-primary text-white p-12 rounded-3xl"
             >
-              <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">GÖREVİMİZ</span>
-              <h3 className="text-3xl font-bold mb-6">Misyonumuz</h3>
-              <p className="text-white/80 text-lg leading-relaxed">
-                Yaşam ve çalışma alanlarına sistemli, hijyenik ve kaliteli temizlik çözümleri sunmak; müşterilerimizin güvenini hizmetlerimizle kazanmak.
-              </p>
+              <span className="text-accent text-[10px] font-black tracking-[0.35em] uppercase block mb-4">Değerlerimiz</span>
+              <h2 className="text-primary font-black leading-tight tracking-tight"
+                style={{ fontSize: "clamp(36px,5.5vw,72px)" }}>
+                Bizi Biz<br />Yapan İlkeler
+              </h2>
             </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <motion.p
+              className="text-primary/50 text-sm leading-relaxed max-w-xs"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-accent text-white p-12 rounded-3xl"
+              transition={{ delay: 0.2 }}
             >
-              <span className="text-white/80 text-sm font-bold tracking-widest uppercase mb-4 block">HEDEFİMİZ</span>
-              <h3 className="text-3xl font-bold mb-6">Vizyonumuz</h3>
-              <p className="text-white/90 text-lg leading-relaxed">
-                Türkiye'nin en güvenilir ve tercih edilen profesyonel temizlik markası olmak; eğitimli ekip ve yenilikçi hizmet anlayışıyla sektörde lider konuma gelmek.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Değerlerimiz */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-6">Değerlerimiz</h2>
-            <p className="text-primary/70 text-lg">Hizmet anlayışımızın temelini oluşturan kurumsal değerlerimiz.</p>
+              Her hizmetimizin temelinde dört temel değer yatar. Bu değerler bizi yönlendirir, kalitemizi tanımlar.
+            </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Values grid */}
+          <div className="grid md:grid-cols-2 gap-px bg-primary/10">
             {[
-              { icon: Shield, title: "Güven", desc: "Her müşterimize güvenilir, şeffaf ve dürüst bir hizmet sunarız." },
-              { icon: Heart, title: "Özen", desc: "Müşteri memnuniyetini ön planda tutarak her detayı özenle ele alırız." },
-              { icon: Star, title: "Saygı", desc: "Müşterilerimize ve ekibimize eşit saygı ve değer gösteririz." },
-              { icon: Award, title: "Disiplin", desc: "Tüm hizmetlerimizi belirlenen standartlar çerçevesinde sistematik olarak sunarız." }
+              {
+                num: "01",
+                title: "Güven",
+                sub: "Trust",
+                desc: "Her müşterimize güvenilir, şeffaf ve dürüst bir hizmet sunarız. Sözümüzün arkasındayız — her seferinde, her alanda.",
+                img: img2,
+              },
+              {
+                num: "02",
+                title: "Özen",
+                sub: "Care",
+                desc: "Müşteri memnuniyetini ön planda tutarak her detayı özenle ele alırız. Gözden kaçan hiçbir nokta yoktur.",
+                img: img3,
+              },
+              {
+                num: "03",
+                title: "Disiplin",
+                sub: "Discipline",
+                desc: "Tüm hizmetlerimizi belirlenen standartlar çerçevesinde sistematik olarak sunarız. Tutarlılık, kalitemizin temelidir.",
+                img: img4,
+              },
+              {
+                num: "04",
+                title: "Saygı",
+                sub: "Respect",
+                desc: "Müşterilerimizin alanlarına ve ekibimizin emeğine eşit değer ve saygı gösteririz. İnsan odaklı yaklaşım vazgeçilmezimizdir.",
+                img: img1,
+              },
             ].map((val, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                className="group relative bg-white overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-6 p-8 border border-primary/10 rounded-2xl bg-white hover:shadow-lg transition-shadow"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-[#f0f5fa] text-accent flex items-center justify-center shrink-0">
-                  <val.icon className="w-8 h-8" />
+                {/* Background photo on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0">
+                  <img src={val.img} alt={val.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-[#0D1B3E]/90" />
                 </div>
-                <div>
-                  <h4 className="text-2xl font-bold text-primary mb-3">{val.title}</h4>
-                  <p className="text-primary/70 leading-relaxed">{val.desc}</p>
+
+                <div className="relative z-10 p-10 md:p-14 min-h-[320px] flex flex-col justify-between">
+                  <div className="flex items-start justify-between">
+                    <span className="text-primary/15 group-hover:text-white/10 font-black text-7xl leading-none transition-colors duration-500 select-none">
+                      {val.num}
+                    </span>
+                    <span className="text-primary/20 group-hover:text-white/20 text-xs font-black tracking-widest uppercase transition-colors duration-500">
+                      {val.sub}
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="w-8 h-px bg-accent mb-5 group-hover:w-16 transition-all duration-500" />
+                    <h3 className="text-primary group-hover:text-white text-3xl md:text-4xl font-black tracking-tight mb-4 transition-colors duration-500">
+                      {val.title}
+                    </h3>
+                    <p className="text-primary/60 group-hover:text-white/70 text-sm leading-relaxed transition-colors duration-500">
+                      {val.desc}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -147,81 +283,110 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* İnsan Odaklılık */}
-      <section className="py-24 bg-[#f0f5fa]">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">EKİBİMİZ</span>
-              <h2 className="text-4xl font-bold text-primary mb-8">İnsan Odaklılık</h2>
-              <div className="space-y-6 text-lg text-primary/80 leading-relaxed">
-                <p>
-                  Bizim için temizlik, yalnızca bir hizmet değil; insanların yaşam kalitesini doğrudan etkileyen bir sorumluluktur. Bu anlayışla her ekip üyemizi titizlikle seçiyor, sürekli eğitimle destekliyoruz.
-                </p>
-                <p>
-                  Mas Grup ekibi; güvenilir, saygılı ve özenli bireylerden oluşur. Her temizlik uzmanımız Mas Akademi süreçlerinden geçmiş, saha deneyimiyle pekişmiş profesyonellerdir.
-                </p>
-                <p>
-                  Çünkü güçlü bir ekip, güçlü bir hizmet demektir. Ve güçlü bir hizmet, mutlu müşteriler demektir.
-                </p>
-              </div>
-            </motion.div>
+      {/* ── 05 EKİP & YAKLAŞIM — full-bleed dark ── */}
+      <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+        <img src={img3} alt="Ekibimiz" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a]/97 via-[#0D1B3E]/85 to-[#0D1B3E]/30" />
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-6"
-            >
-              {[
-                { stat: "500+", label: "Eğitimli Personel" },
-                { stat: "10+", label: "Yıl Deneyim" },
-                { stat: "4", label: "Şehirde Hizmet" },
-                { stat: "100%", label: "Memnuniyet Hedefi" }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white p-8 rounded-2xl text-center shadow-sm border border-primary/10"
-                >
-                  <span className="text-4xl font-black text-accent block mb-2">{item.stat}</span>
-                  <span className="text-sm font-medium text-primary/70">{item.label}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+        <div className="relative z-10 px-8 md:px-16 py-24 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="text-accent text-[10px] font-black tracking-[0.35em] uppercase block mb-6">Ekibimiz</span>
+            <h2 className="text-white font-black leading-tight tracking-tight mb-8"
+              style={{ fontSize: "clamp(32px,4.5vw,60px)" }}>
+              Güçlü Ekip,<br />
+              <span className="text-accent">Güçlü Hizmet.</span>
+            </h2>
+            <p className="text-white/55 leading-relaxed mb-6 text-[15px]">
+              Bizim için temizlik, yalnızca bir hizmet değil; insanların yaşam kalitesini doğrudan etkileyen bir sorumluluktur. Her ekip üyemiz, Mas Akademi süreçlerinden geçmiş, saha deneyimiyle pekişmiş profesyonellerdir.
+            </p>
+            <p className="text-white/55 leading-relaxed text-[15px]">
+              Güvenilir, saygılı ve özenli bireylerden oluşan ekibimiz, her hizmette aynı standartta performans sergilemek için sürekli gelişmektedir.
+            </p>
+
+            <Link href="/iletisim" className="inline-flex items-center gap-3 mt-10 group">
+              <span className="text-accent font-black text-sm tracking-widest uppercase">Bizimle Çalış</span>
+              <ArrowUpRight className="w-4 h-4 text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+            </Link>
+          </motion.div>
+
+          {/* Right side — vertical pills */}
+          <motion.div
+            className="hidden lg:flex flex-col gap-4"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {[
+              { label: "Mas Akademi Eğitimi", desc: "Her personel sertifikalı eğitim sürecinden geçer." },
+              { label: "Kalite Kontrol", desc: "Her hizmet sonrası sistemli denetim ve geri bildirim." },
+              { label: "Sürekli Gelişim", desc: "Sektör yenilikleri takip edilerek ekip sürekli güncellenir." },
+              { label: "Hijyen Protokolleri", desc: "Uluslararası standartlarda hijyen ve güvenlik uygulamaları." },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="border border-white/10 bg-white/[0.04] backdrop-blur-sm px-6 py-5 hover:border-accent/40 hover:bg-white/[0.07] transition-all duration-300"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 + i * 0.08 }}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                  <span className="text-white font-bold text-sm">{item.label}</span>
+                </div>
+                <p className="text-white/40 text-xs leading-relaxed pl-4">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Manifesto */}
-      <section className="relative py-32 flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(${ana5})` }}
-        />
-        <div className="absolute inset-0 z-0 bg-primary/88" />
+      {/* ── 06 KAPANIŞ CTA ── */}
+      <section className="bg-[#0D1B3E] py-24 md:py-36 px-8 md:px-16 relative overflow-hidden">
+        {/* Decorative accent */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-40" />
+        <div className="absolute -right-32 -bottom-32 w-96 h-96 rounded-full opacity-5"
+          style={{ background: "#00B4D8", filter: "blur(60px)" }} />
 
-        <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-accent text-sm font-bold tracking-widest uppercase">MANİFESTOMUZ</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-              "Bizim için temizlik bir görev değil,<br />bir yaşam felsefesidir."
+            <span className="text-accent text-[10px] font-black tracking-[0.35em] uppercase block mb-6">Hizmet Almaya Hazır mısınız?</span>
+            <h2 className="text-white font-black leading-tight tracking-tight"
+              style={{ fontSize: "clamp(32px,4.5vw,60px)" }}>
+              Temiz Alanlar,<br />
+              <span className="text-accent">Güçlü Yarınlar.</span>
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
-              Her alanda titizlik, her müşteride güven, her hizmette özen. Mas Grup olarak sunduğumuz yalnızca temiz bir alan değil; huzurlu, sağlıklı ve güvenilir bir yaşam ortamıdır.
-            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link href="/iletisim">
+              <Button className="bg-accent hover:bg-accent/90 text-white font-black tracking-wide px-8 h-14 text-sm gap-2 group">
+                TEKLİF AL
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </Link>
+            <Link href="/hizmetlerimiz">
+              <Button variant="outline" className="border-white/20 text-white hover:bg-white/5 font-bold tracking-wide px-8 h-14 text-sm">
+                HİZMETLERİ İNCELE
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

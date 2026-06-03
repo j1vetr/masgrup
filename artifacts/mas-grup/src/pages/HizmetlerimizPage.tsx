@@ -88,7 +88,7 @@ export default function HizmetlerimizPage() {
     <div className="w-full overflow-hidden">
 
       {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#0D1B3E]">
+      <section ref={heroRef} className="relative h-screen flex items-center overflow-hidden bg-[#0D1B3E]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img fetchPriority="high" decoding="async" src={heroImg} alt="Hizmetlerimiz" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B3E] via-[#0D1B3E]/75 to-transparent" />
@@ -121,7 +121,7 @@ export default function HizmetlerimizPage() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 pb-20 px-8 md:px-16 max-w-4xl">
+        <div className="relative z-10 px-8 md:px-16 max-w-4xl w-full" style={{ paddingTop: 72 }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ export default function HizmetlerimizPage() {
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: "clamp(48px,7.5vw,108px)" }}>
+              style={{ fontSize: "clamp(32px,7.5vw,108px)" }}>
               Profesyonel<br />
               <em className="not-italic text-accent">Temizlik</em><br />
               Çözümleri.
@@ -164,7 +164,7 @@ export default function HizmetlerimizPage() {
             <motion.a
               key={i}
               href={`#${s.id}`}
-              className="relative group px-8 py-8 border-r border-primary/8 last:border-r-0 overflow-hidden block"
+              className="relative group px-4 py-5 md:px-8 md:py-8 border-r border-primary/8 last:border-r-0 overflow-hidden block"
               initial="rest"
               animate={hoveredService === i || (hoveredService === null && activeService === i) ? "active" : "rest"}
               onMouseEnter={() => setHoveredService(i)}
@@ -245,7 +245,7 @@ export default function HizmetlerimizPage() {
 
             {/* Text side */}
             <motion.div
-              className={`flex flex-col justify-center px-10 md:px-16 py-20 ${isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}
+              className={`flex flex-col justify-center px-6 md:px-16 py-12 md:py-20 ${isEven ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}
               initial={{ opacity: 0, x: isEven ? 30 : -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.15 }}

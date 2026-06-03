@@ -4,11 +4,11 @@ import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import heroImg  from "@assets/ana7_1780314877332.jpeg";
-import imgEv    from "@assets/hizmet_ev_temizligi.png";
-import imgOfis  from "@assets/hizmet_ofis_temizligi.png";
-import imgInsaat from "@assets/hizmet_insaat_sonrasi.png";
-import imgDetay from "@assets/hizmet_detay_temizlik.png";
+import heroImg  from "@assets/ana7_1780314877332.webp";
+import imgEv    from "@assets/hizmet_ev_temizligi.webp";
+import imgOfis  from "@assets/hizmet_ofis_temizligi.webp";
+import imgInsaat from "@assets/hizmet_insaat_sonrasi.webp";
+import imgDetay from "@assets/hizmet_detay_temizlik.webp";
 
 const services = [
   {
@@ -90,7 +90,7 @@ export default function HizmetlerimizPage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#0D1B3E]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src={heroImg} alt="Hizmetlerimiz" className="w-full h-full object-cover object-center" />
+          <img fetchPriority="high" decoding="async" src={heroImg} alt="Hizmetlerimiz" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B3E] via-[#0D1B3E]/75 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/90 via-transparent to-[#0D1B3E]/40" />
         </motion.div>

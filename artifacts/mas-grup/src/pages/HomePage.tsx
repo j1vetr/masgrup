@@ -4,19 +4,19 @@ import { Link } from "wouter";
 import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, ArrowRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import ana1 from "@assets/ana5_1780320877135.jpeg";
-import ana3 from "@assets/ana3_1780314877331.jpeg";
-import ana4 from "@assets/ana4_1780314877331.jpeg";
-import ana5 from "@assets/ana5_1780314877332.jpeg";
-import ana6 from "@assets/ana6_1780314877332.jpeg";
-import nedenBg from "@assets/ana3_1780318262914.jpeg";
-import akademiImg from "@assets/ana4_1780320177397.jpeg";
-import logoDark from "@assets/logo_dark_1780317107003.png";
-import logoLight from "@assets/logo_light_1780317107003.png";
-import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.png";
-import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.png";
-import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_1780318762434.png";
-import svcDetay from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(4)_1780318762433.png";
+import ana1 from "@assets/ana5_1780320877135.webp";
+import ana3 from "@assets/ana3_1780314877331.webp";
+import ana4 from "@assets/ana4_1780314877331.webp";
+import ana5 from "@assets/ana5_1780314877332.webp";
+import ana6 from "@assets/ana6_1780314877332.webp";
+import nedenBg from "@assets/ana3_1780318262914.webp";
+import akademiImg from "@assets/ana4_1780320177397.webp";
+import logoDark from "@assets/logo_dark_1780317107003.webp";
+import logoLight from "@assets/logo_light_1780317107003.webp";
+import svcEv from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(1)_1780318762434.webp";
+import svcOfis from "@assets/ChatGPT_Image_1_Haz_2026_15_58_40_(2)_1780318762434.webp";
+import svcInsaat from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(3)_1780318762434.webp";
+import svcDetay from "@assets/ChatGPT_Image_1_Haz_2026_15_58_41_(4)_1780318762433.webp";
 
 export default function HomePage() {
   useEffect(() => { document.title = "Mas Grup | Profesyonel Temizlik Hizmetleri"; }, []);
@@ -322,7 +322,7 @@ export default function HomePage() {
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
-              <img src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
               {/* Gradient overlays */}
               <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #07101f 0%, transparent 30%)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, transparent 50%)" }} />
@@ -693,7 +693,7 @@ export default function HomePage() {
 
           {/* Left: full dark image */}
           <div className="relative h-72 lg:h-auto">
-            <img src={ana6} alt="Sürdürülebilir Bakış" className="absolute inset-0 w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src={ana6} alt="Sürdürülebilir Bakış" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/30 to-transparent" />
           </div>
 
@@ -814,7 +814,7 @@ export default function HomePage() {
 
               {/* Logo */}
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <img src={logoDark} alt="Mas Grup" className="h-8 w-auto opacity-90" />
+                <img loading="lazy" decoding="async" src={logoDark} alt="Mas Grup" className="h-8 w-auto opacity-90" />
                 <span className="text-white/30 text-xs italic">Her detayda, <span className="text-accent not-italic">insan</span> için.</span>
               </div>
             </motion.div>

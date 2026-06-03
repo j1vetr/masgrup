@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoLight from "@assets/logo_light_1780317107003.png";
-import logoDark from "@assets/logo_dark_1780317107003.png";
+import logoLight from "@assets/logo_light_1780317107003.webp";
+import logoDark from "@assets/logo_dark_1780317107003.webp";
 
 export default function Header() {
   const [location] = useLocation();

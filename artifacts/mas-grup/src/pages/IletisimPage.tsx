@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import heroImg from "@assets/iletisim_hero.png";
+import heroImg from "@assets/iletisim_hero.webp";
 
 const formSchema = z.object({
   adSoyad:    z.string().min(2, "Ad Soyad en az 2 karakter olmalıdır"),
@@ -76,7 +76,7 @@ export default function IletisimPage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-[70vh] flex items-end overflow-hidden bg-[#030b1a]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src={heroImg} alt="İletişim" className="w-full h-full object-cover object-center" />
+          <img fetchPriority="high" decoding="async" src={heroImg} alt="İletişim" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a] via-[#030b1a]/65 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030b1a]/95 via-[#030b1a]/30 to-transparent" />
         </motion.div>

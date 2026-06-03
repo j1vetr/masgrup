@@ -4,10 +4,10 @@ import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import heroImg     from "@assets/akademi_hero.png";
-import imgEgitim   from "@assets/akademi_egitim.png";
-import imgHijyen   from "@assets/akademi_hijyen.png";
-import imgSertifika from "@assets/akademi_sertifika.png";
+import heroImg     from "@assets/akademi_hero.webp";
+import imgEgitim   from "@assets/akademi_egitim.webp";
+import imgHijyen   from "@assets/akademi_hijyen.webp";
+import imgSertifika from "@assets/akademi_sertifika.webp";
 
 const modules = [
   {
@@ -67,7 +67,7 @@ export default function AkademiPage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#030b1a]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src={heroImg} alt="Mas Akademi" className="w-full h-full object-cover object-top" />
+          <img fetchPriority="high" decoding="async" src={heroImg} alt="Mas Akademi" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030b1a] via-[#030b1a]/60 to-[#030b1a]/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a]/80 via-transparent to-transparent" />
         </motion.div>
@@ -162,7 +162,7 @@ export default function AkademiPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgEgitim} alt="Eğitim Sistemi" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgEgitim} alt="Eğitim Sistemi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#030b1a]/30 to-transparent" />
           <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-70" />
           <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-70" />
@@ -342,7 +342,7 @@ export default function AkademiPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgHijyen} alt="Hijyen Bilimi" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgHijyen} alt="Hijyen Bilimi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-bl from-[#07101f]/25 to-transparent" />
           <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-70" />
           <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-70" />
@@ -357,7 +357,7 @@ export default function AkademiPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgSertifika} alt="Sertifikasyon" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgSertifika} alt="Sertifikasyon" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
           <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-70" />
           <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-70" />

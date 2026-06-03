@@ -4,13 +4,13 @@ import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import hero      from "@assets/ana5_1780320877135.jpeg";
-import imgHikaye from "@assets/ana4_1780314877331.jpeg";
-import img2      from "@assets/ana3_1780314877331.jpeg";
-import img3      from "@assets/ana6_1780314877332.jpeg";
-import img4      from "@assets/ana2_1780317265640.jpeg";
-import imgEkip   from "@assets/ana5_1780317282679.jpeg";
-import imgSaygi  from "@assets/hizmet_saygi.png";
+import hero      from "@assets/ana5_1780320877135.webp";
+import imgHikaye from "@assets/ana4_1780314877331.webp";
+import img2      from "@assets/ana3_1780314877331.webp";
+import img3      from "@assets/ana6_1780314877332.webp";
+import img4      from "@assets/ana2_1780317265640.webp";
+import imgEkip   from "@assets/ana5_1780317282679.webp";
+import imgSaygi  from "@assets/hizmet_saygi.webp";
 
 export default function HakkimizdaPage() {
   useEffect(() => { document.title = "Hakkımızda | Mas Grup"; }, []);
@@ -36,7 +36,7 @@ export default function HakkimizdaPage() {
       <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#0D1B3E]">
 
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src={hero} alt="Mas Grup" className="w-full h-full object-cover object-center" />
+          <img fetchPriority="high" decoding="async" src={hero} alt="Mas Grup" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B3E] via-[#0D1B3E]/70 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B3E]/80 via-transparent to-[#0D1B3E]/30" />
         </motion.div>
@@ -139,7 +139,7 @@ export default function HakkimizdaPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgHikaye} alt="Hikayemiz" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgHikaye} alt="Hikayemiz" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B3E]/40 to-transparent" />
           <div className="absolute bottom-8 left-8">
             <div className="bg-accent px-4 py-2 inline-block">
@@ -252,7 +252,7 @@ export default function HakkimizdaPage() {
                   }}
                   transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <img src={val.img} alt={val.title} className="w-full h-full object-cover" />
+                  <img loading="lazy" decoding="async" src={val.img} alt={val.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-[#0D1B3E]/92" />
                 </motion.div>
 
@@ -309,7 +309,7 @@ export default function HakkimizdaPage() {
 
       {/* ── 05 EKİP ── */}
       <section className="relative overflow-hidden min-h-[80vh] flex items-center">
-        <img src={imgEkip} alt="Ekibimiz" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <img loading="lazy" decoding="async" src={imgEkip} alt="Ekibimiz" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a]/97 via-[#0D1B3E]/85 to-[#0D1B3E]/30" />
 
         <div className="relative z-10 px-8 md:px-16 py-24 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">

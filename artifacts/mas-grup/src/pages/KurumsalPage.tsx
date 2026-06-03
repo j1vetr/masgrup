@@ -4,10 +4,10 @@ import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import heroImg    from "@assets/kurumsal_hero.png";
-import imgKalite  from "@assets/kurumsal_kalite.png";
-import imgSozlesme from "@assets/kurumsal_sozlesme.png";
-import imgBg      from "@assets/ana6_1780314877332.jpeg";
+import heroImg    from "@assets/kurumsal_hero.webp";
+import imgKalite  from "@assets/kurumsal_kalite.webp";
+import imgSozlesme from "@assets/kurumsal_sozlesme.webp";
+import imgBg      from "@assets/ana6_1780314877332.webp";
 
 const segments = [
   { num: "01", title: "Villa Projeleri",     sub: "Residential Premium", desc: "Özel villalar ve lüks konutlar için özel protokollerle uygulanan premium temizlik hizmeti." },
@@ -46,7 +46,7 @@ export default function KurumsalPage() {
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#030b1a]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
-          <img src={heroImg} alt="Kurumsal" className="w-full h-full object-cover object-center" />
+          <img fetchPriority="high" decoding="async" src={heroImg} alt="Kurumsal" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a] via-[#030b1a]/65 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030b1a]/90 via-transparent to-[#030b1a]/35" />
         </motion.div>
@@ -142,7 +142,7 @@ export default function KurumsalPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgKalite} alt="Kalite Denetimi" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgKalite} alt="Kalite Denetimi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B3E]/25 to-transparent" />
           <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-70" />
           <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-70" />
@@ -262,7 +262,7 @@ export default function KurumsalPage() {
 
       {/* ── 5 ADIMLI SÜREÇ — dark full-bleed ── */}
       <section className="relative overflow-hidden py-24 md:py-36 px-8 md:px-16">
-        <img src={imgBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <img loading="lazy" decoding="async" src={imgBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-[#030b1a]/94" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -352,7 +352,7 @@ export default function KurumsalPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <img src={imgSozlesme} alt="Sözleşme Güvencesi" className="absolute inset-0 w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={imgSozlesme} alt="Sözleşme Güvencesi" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-bl from-[#07101f]/15 to-transparent" />
           <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-70" />
           <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-70" />

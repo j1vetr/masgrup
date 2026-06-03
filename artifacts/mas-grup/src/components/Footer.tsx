@@ -117,7 +117,7 @@ export default function Footer() {
                   <span className="text-[#25D366] font-black text-[10px] tracking-widest">WA</span>
                 </a>
                 {[
-                  { href: "#", icon: <Instagram className="w-3.5 h-3.5" /> },
+                  { href: "https://www.instagram.com/masgrupcleaning", icon: <Instagram className="w-3.5 h-3.5" /> },
                   { href: "#", icon: <Linkedin  className="w-3.5 h-3.5" /> },
                   { href: "#", icon: <Facebook  className="w-3.5 h-3.5" /> },
                 ].map((s, i) => (

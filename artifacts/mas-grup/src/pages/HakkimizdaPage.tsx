@@ -33,7 +33,7 @@ export default function HakkimizdaPage() {
     <div className="w-full overflow-hidden">
 
       {/* ── 01 HERO ── */}
-      <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#0D1B3E]">
+      <section ref={heroRef} className="relative h-screen flex items-center overflow-hidden bg-[#0D1B3E]">
 
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img fetchPriority="high" decoding="async" src={hero} alt="Mas Grup" className="w-full h-full object-cover object-center" />
@@ -49,7 +49,7 @@ export default function HakkimizdaPage() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 pb-20 px-8 md:px-16 max-w-4xl">
+        <div className="relative z-10 px-8 md:px-16 max-w-4xl w-full" style={{ paddingTop: 72 }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

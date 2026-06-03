@@ -36,8 +36,8 @@ export default function HomePage() {
   return (
     <div className="w-full">
 
-      {/* ABOVE-FOLD: hero + 3-panel + marquee — exactly 100vh */}
-      <div className="h-screen flex flex-col">
+      {/* ABOVE-FOLD: hero + 3-panel + marquee — exactly 100vh on desktop */}
+      <div className="lg:h-screen flex flex-col">
 
       {/* HERO SECTION */}
       <section className="relative bg-primary flex-1 flex flex-col" style={{ paddingTop: 52 }}>
@@ -89,7 +89,7 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana3})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/91" />
-          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[260px] lg:min-h-[220px]">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">01</span>
@@ -128,7 +128,7 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana4})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/80" />
-          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[260px] lg:min-h-[220px]">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">02</span>
@@ -160,7 +160,7 @@ export default function HomePage() {
             style={{ backgroundImage: `url(${ana5})` }}
           />
           <div className="absolute inset-0 bg-[#050d1a]/82" />
-          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[220px]">
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between min-h-[260px] lg:min-h-[220px]">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-accent text-sm font-bold tracking-widest">03</span>
@@ -206,7 +206,7 @@ export default function HomePage() {
         </div>
 
         {/* Marquee track — starts right after the | separator */}
-        <div className="flex overflow-hidden py-5 pl-52 md:pl-60">
+        <div className="flex overflow-hidden py-5 pl-36 sm:pl-44 md:pl-60">
           <div
             className="flex items-center gap-0 shrink-0"
             style={{ animation: "marquee 28s linear infinite" }}
@@ -250,7 +250,7 @@ export default function HomePage() {
       <section id="neden" className="relative overflow-hidden" style={{ background: "#07101f" }}>
 
         {/* Full-bleed grid — LEFT content | RIGHT image edge-to-edge */}
-        <div className="grid lg:grid-cols-[55%_45%] min-h-[90vh]">
+        <div className="grid lg:grid-cols-[55%_45%] lg:min-h-[90vh]">
 
           {/* LEFT — padded editorial content */}
           <motion.div
@@ -309,13 +309,13 @@ export default function HomePage() {
 
           </motion.div>
 
-          {/* RIGHT — image, full bleed to edge */}
+          {/* RIGHT — image, full bleed to edge (desktop only) */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             {/* Diagonal left cut */}
             <div
@@ -323,10 +323,8 @@ export default function HomePage() {
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
               <img loading="lazy" decoding="async" src={nedenBg} alt="Mas Grup" className="w-full h-full object-cover" />
-              {/* Gradient overlays */}
               <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #07101f 0%, transparent 30%)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #07101f 0%, transparent 50%)" }} />
-              {/* Scan lines */}
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.015) 3px,rgba(255,255,255,0.015) 4px)" }} />
             </div>
 
@@ -523,7 +521,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-black leading-[1.0] tracking-tight"
+              className="text-3xl md:text-5xl lg:text-7xl font-black leading-[1.0] tracking-tight"
             >
               Sistemli <span className="text-accent">Temizlik</span> Yaklaşımı
             </motion.h2>
@@ -719,7 +717,7 @@ export default function HomePage() {
               </div>
 
               {/* 3 value cards */}
-              <div className="space-y-3 min-w-[190px]">
+              <div className="flex flex-row lg:flex-col gap-3 mt-6 lg:mt-0 lg:min-w-[190px]">
                 {[
                   { icon: Leaf,   text: "Doğaya saygı, yaşama değer." },
                   { icon: Users,  text: "Topluma katkı, ortak geleceğimiz." },
@@ -731,12 +729,12 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-[#f4f8fc] border border-primary/8 rounded-2xl p-4 flex items-start gap-3"
+                    className="bg-[#f4f8fc] border border-primary/8 rounded-2xl p-4 flex flex-col items-start gap-2 flex-1"
                   >
                     <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
                       <v.icon className="w-4 h-4" />
                     </div>
-                    <p className="text-primary/70 text-xs font-semibold leading-snug pt-1">{v.text}</p>
+                    <p className="text-primary/70 text-xs font-semibold leading-snug">{v.text}</p>
                   </motion.div>
                 ))}
               </div>

@@ -72,3 +72,9 @@ id = "vg3w2uNIoEdRxWOWok9sA"
 uri = "file://attached_assets/kurumsal_sozlesme.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "YQBjwzwvvHW56x9KBNtXa"
+uri = "file://attached_assets/iletisim_hero.png"
+type = "image"
+title = "generated_image"

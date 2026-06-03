@@ -339,12 +339,6 @@ export default function HomePage() {
               <div className="text-white/80 text-[8px] font-bold tracking-widest uppercase mt-0.5">Kalite</div>
             </div>
 
-            {/* Mid floating stat */}
-            <div className="absolute z-20 rounded-xl px-4 py-3 border border-white/10" style={{ top: "48%", right: "8%", background: "rgba(7,16,31,0.85)", backdropFilter: "blur(12px)" }}>
-              <div className="text-white font-black text-lg leading-none">12+</div>
-              <div className="text-white/50 text-[8px] font-bold tracking-widest uppercase mt-0.5">Yıl Deneyim</div>
-            </div>
-
             {/* Bottom quote */}
             <div className="absolute bottom-8 z-20 pl-[calc(8%+20px)] pr-6">
               <div className="w-4 h-px mb-2.5" style={{ background: "#00B4D8" }} />

@@ -37,7 +37,7 @@ const contactItems = [
   {
     icon: MapPin,
     label: "Adres",
-    value: "Atatürk Mah. 123. Sok. No:45\nKadıköy / İstanbul",
+    value: "Yeşilyurt Mah. Yeni Havalimanı Cad. No:2/41\nBakırköy / İSTANBUL",
     href: null,
   },
   {

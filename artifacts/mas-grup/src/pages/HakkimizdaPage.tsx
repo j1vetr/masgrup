@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Leaf, Users, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import hero      from "@assets/ana5_1780320877135.webp";
@@ -372,7 +372,77 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* ── 06 CTA ── */}
+      {/* ── 06 DEĞER — Sadece Temizlik Değil ── */}
+      <section className="grid lg:grid-cols-2 min-h-[60vh]">
+        {/* Sol: görsel */}
+        <motion.div
+          className="relative overflow-hidden min-h-[340px] bg-[#0D1B3E] flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: "radial-gradient(rgba(0,180,216,0.07) 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
+          <div className="relative z-10 text-center px-12">
+            <Leaf className="w-14 h-14 text-accent mx-auto mb-6 opacity-80" />
+            <p className="text-white/20 font-black text-[clamp(36px,6vw,80px)] leading-none select-none tracking-tighter">
+              DEĞER
+            </p>
+          </div>
+          <div className="absolute top-5 left-5 w-8 h-8 border-t-2 border-l-2 border-accent opacity-30" />
+          <div className="absolute bottom-5 right-5 w-8 h-8 border-b-2 border-r-2 border-accent opacity-30" />
+        </motion.div>
+
+        {/* Sağ: metin */}
+        <motion.div
+          className="bg-white flex flex-col justify-center px-10 md:px-16 py-20"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="flex items-center gap-2 mb-5">
+            <Leaf className="w-4 h-4 text-accent" />
+            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs">Sürdürülebilir Bakış</span>
+          </div>
+          <h2 className="font-black text-primary leading-tight tracking-tight mb-6"
+            style={{ fontSize: "clamp(28px,3.5vw,50px)" }}>
+            Sadece Temizlik Değil,<br />
+            <span className="text-accent">Değer Üretiyoruz</span>
+          </h2>
+          <div className="space-y-4 text-primary/60 text-sm leading-relaxed mb-10 max-w-md">
+            <p>
+              Mas Grup olarak yaşadığımız dünyaya karşı sorumluluğumuzun farkındayız. Bu nedenle düzenli olarak doğaya ve canlılara katkı sağlayan projelere destek oluyoruz.
+            </p>
+            <p>
+              Bunu bir kampanya olarak değil, hayatımızın bir parçası olarak görüyoruz. Çünkü temiz bir gelecek, küçük adımlarla başlar.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {[
+              { icon: Leaf,  text: "Doğaya saygı, yaşama değer." },
+              { icon: Users, text: "Topluma katkı, ortak geleceğimiz." },
+              { icon: Globe, text: "Küçük adımlar, büyük değişimler." },
+            ].map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#f4f8fc] border border-primary/8 px-4 py-3 flex items-start gap-3"
+              >
+                <div className="w-8 h-8 bg-accent/10 flex items-center justify-center text-accent shrink-0">
+                  <v.icon className="w-4 h-4" />
+                </div>
+                <p className="text-primary/70 text-xs font-semibold leading-snug pt-1.5">{v.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── 07 CTA ── */}
       <section className="bg-[#0D1B3E] py-24 md:py-36 px-8 md:px-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-40" />
         <div

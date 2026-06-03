@@ -41,10 +41,10 @@ const modules = [
 ];
 
 const stats = [
-  { value: "200+", label: "Saat Eğitim", sub: "Her personel, sahaya çıkmadan" },
-  { value: "47",   label: "Madde Denetim",  sub: "Her hizmet bitiminde uygulanan" },
-  { value: "4",    label: "Aşamalı Müfredat", sub: "Hijyenden sertifikaya" },
-  { value: "%98",  label: "Müşteri Memnuniyeti", sub: "Eğitimli ekip garantisi" },
+  { value: "47",   label: "Madde Denetim Protokolü", sub: "Her hizmet bitiminde uygulanan" },
+  { value: "4",    label: "Modüllü Müfredat",         sub: "Hijyenden sertifikaya tam program" },
+  { value: "3 Ay", label: "Eğitim Süreci",            sub: "Sahaya çıkmadan önce tamamlanan" },
+  { value: "0",    label: "Tolerans",                  sub: "Hijyen ve kalite standartlarında" },
 ];
 
 export default function AkademiPage() {
@@ -128,7 +128,7 @@ export default function AkademiPage() {
               <p className="font-black text-primary leading-[1.04] tracking-tight"
                 style={{ fontSize: "clamp(26px,4.5vw,62px)" }}>
                 "Bir personelimiz sahaya çıktığında, arkasında{" "}
-                <em className="not-italic text-accent">200 saatten fazla eğitim</em>,
+                <em className="not-italic text-accent">kapsamlı bir eğitim süreci</em>,
                 {" "}47 maddelik denetim protokolü ve Mas Akademi sertifikası vardır."
               </p>
             </div>

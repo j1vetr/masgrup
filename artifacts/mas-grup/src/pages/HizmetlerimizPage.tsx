@@ -103,8 +103,8 @@ export default function HizmetlerimizPage() {
           </span>
         </div>
 
-        {/* Service nav pills — top left */}
-        <div className="absolute top-28 left-8 md:left-16 z-10 hidden md:flex flex-col gap-2">
+        {/* Service nav pills — top left, only on large screens */}
+        <div className="absolute top-28 left-8 lg:left-16 z-10 hidden lg:flex flex-col gap-2">
           {services.map((s, i) => (
             <a
               key={i}
@@ -129,7 +129,7 @@ export default function HizmetlerimizPage() {
           >
             <div className="flex items-center gap-3 mb-8">
               <span className="w-8 h-px bg-accent" />
-              <span className="text-accent text-[10px] font-bold tracking-[0.35em] uppercase">Neler Yapıyoruz</span>
+              <span className="text-accent text-[10px] font-bold tracking-[0.35em] uppercase">Hizmet Alanlarımız</span>
             </div>
 
             <h1 className="text-white font-black leading-[1.05] tracking-tight mb-8"

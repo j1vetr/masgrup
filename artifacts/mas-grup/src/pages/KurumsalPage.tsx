@@ -44,7 +44,7 @@ export default function KurumsalPage() {
     <div className="w-full overflow-hidden">
 
       {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-screen flex items-end overflow-hidden bg-[#030b1a]">
+      <section ref={heroRef} className="relative h-screen flex items-center overflow-hidden bg-[#030b1a]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img fetchPriority="high" decoding="async" src={heroImg} alt="Kurumsal" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a] via-[#030b1a]/65 to-transparent" />
@@ -65,7 +65,7 @@ export default function KurumsalPage() {
           </div>
         </div>
 
-        <div className="relative z-10 pb-20 px-8 md:px-16 max-w-5xl">
+        <div className="relative z-10 px-8 md:px-16 max-w-5xl w-full" style={{ paddingTop: 72 }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
             <div className="flex items-center gap-3 mb-8">
@@ -73,7 +73,7 @@ export default function KurumsalPage() {
               <span className="text-accent text-[10px] font-bold tracking-[0.35em] uppercase">Kurumsal Kimlik</span>
             </div>
             <h1 className="text-white font-black leading-[1.04] tracking-tight mb-8"
-              style={{ fontSize: "clamp(46px,7.5vw,108px)" }}>
+              style={{ fontSize: "clamp(32px,7.5vw,108px)" }}>
               Büyük Alanlar,<br />
               <em className="not-italic text-accent">Büyük</em><br />
               Sorumluluk.
@@ -123,7 +123,7 @@ export default function KurumsalPage() {
               { value: "%100", label: "Raporlama",          sub: "Fotoğraflı denetim ve imzalı teslimat" },
               { value: "24/7", label: "Müşteri Desteği",   sub: "Acil müdahale ve iletişim garantisi" },
             ].map((s, i) => (
-              <div key={i} className="bg-white px-8 py-10">
+              <div key={i} className="bg-white px-4 py-6 md:px-8 md:py-10">
                 <span className="text-accent font-black block leading-none mb-3"
                   style={{ fontSize: "clamp(34px,4vw,58px)" }}>{s.value}</span>
                 <span className="text-primary font-black text-sm tracking-wide block mb-1">{s.label}</span>
@@ -154,7 +154,7 @@ export default function KurumsalPage() {
         </motion.div>
 
         <motion.div
-          className="bg-[#0D1B3E] flex flex-col justify-center px-10 md:px-16 py-20"
+          className="bg-[#0D1B3E] flex flex-col justify-center px-6 md:px-16 py-12 md:py-20"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -225,7 +225,7 @@ export default function KurumsalPage() {
                 <div className="absolute top-4 left-4 z-20 w-5 h-5 border-t-2 border-l-2 border-accent" />
                 <div className="absolute bottom-4 right-4 z-20 w-5 h-5 border-b-2 border-r-2 border-accent" />
 
-                <div className="relative z-10 p-10 min-h-[260px] flex flex-col justify-between">
+                <div className="relative z-10 p-6 md:p-10 min-h-[240px] flex flex-col justify-between">
                   <div className="flex items-start justify-between">
                     <motion.span className="font-black text-6xl leading-none select-none"
                       variants={{ rest: { color: "rgba(13,27,62,0.09)" }, hover: { color: "rgba(255,255,255,0.07)" } }}
@@ -311,7 +311,7 @@ export default function KurumsalPage() {
       {/* ── SÖZLEŞME GÜVENCESİ — split ── */}
       <section className="grid lg:grid-cols-2 min-h-[75vh]">
         <motion.div
-          className="bg-[#07101f] flex flex-col justify-center px-10 md:px-16 py-20 order-2 lg:order-1"
+          className="bg-[#07101f] flex flex-col justify-center px-6 md:px-16 py-12 md:py-20 order-2 lg:order-1"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

@@ -74,7 +74,7 @@ export default function IletisimPage() {
     <div className="w-full overflow-hidden">
 
       {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-[70vh] flex items-end overflow-hidden bg-[#030b1a]">
+      <section ref={heroRef} className="relative h-[70vh] flex items-center overflow-hidden bg-[#030b1a]">
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <img fetchPriority="high" decoding="async" src={heroImg} alt="İletişim" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#030b1a] via-[#030b1a]/65 to-transparent" />
@@ -87,7 +87,7 @@ export default function IletisimPage() {
             style={{ fontSize: "clamp(50px,10vw,130px)" }}>İLETİŞİM</span>
         </div>
 
-        <div className="relative z-10 pb-16 px-8 md:px-16 max-w-5xl">
+        <div className="relative z-10 px-8 md:px-16 max-w-5xl w-full" style={{ paddingTop: 60 }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
             <div className="flex items-center gap-3 mb-6">
@@ -131,7 +131,7 @@ export default function IletisimPage() {
 
         {/* Sol — İletişim bilgileri (navy) */}
         <motion.div
-          className="lg:col-span-4 bg-[#0D1B3E] flex flex-col justify-between px-10 md:px-14 py-20"
+          className="lg:col-span-4 bg-[#0D1B3E] flex flex-col justify-between px-6 md:px-14 py-12 md:py-20"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -200,7 +200,7 @@ export default function IletisimPage() {
 
         {/* Sağ — Form (beyaz) */}
         <motion.div
-          className="lg:col-span-8 bg-white flex flex-col justify-center px-10 md:px-16 lg:px-20 py-20"
+          className="lg:col-span-8 bg-white flex flex-col justify-center px-6 md:px-16 lg:px-20 py-12 md:py-20"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -353,7 +353,7 @@ export default function IletisimPage() {
               { num: "03", title: "Taahhütlü Teklif",      desc: "Sunduğumuz fiyat teklifi yazılı güvence altındadır." },
             ].map((item, i) => (
               <motion.div key={i}
-                className="bg-white px-8 py-10"
+                className="bg-white px-6 py-8 md:px-8 md:py-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

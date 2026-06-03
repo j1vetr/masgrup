@@ -62,7 +62,7 @@ export default function HakkimizdaPage() {
 
             <h1
               className="text-white font-black leading-[1.08] tracking-tight mb-8"
-              style={{ fontSize: "clamp(48px,7.5vw,108px)" }}
+              style={{ fontSize: "clamp(32px,7.5vw,108px)" }}
             >
               Temizliği<br />
               <em className="not-italic text-accent">Felsefeye</em><br />
@@ -149,7 +149,7 @@ export default function HakkimizdaPage() {
         </motion.div>
 
         <motion.div
-          className="bg-[#0D1B3E] flex flex-col justify-center px-10 md:px-16 py-20"
+          className="bg-[#0D1B3E] flex flex-col justify-center px-6 md:px-16 py-16 md:py-20"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -408,7 +408,7 @@ export default function HakkimizdaPage() {
                 </div>
               </div>
 
-              <div className="space-y-3 min-w-[190px]">
+              <div className="flex flex-row lg:flex-col gap-3 mt-6 lg:mt-0 lg:min-w-[190px]">
                 {[
                   { icon: Leaf,  text: "Doğaya saygı, yaşama değer." },
                   { icon: Users, text: "Topluma katkı, ortak geleceğimiz." },
@@ -420,12 +420,12 @@ export default function HakkimizdaPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-[#f4f8fc] border border-primary/8 rounded-2xl p-4 flex items-start gap-3"
+                    className="bg-[#f4f8fc] border border-primary/8 rounded-2xl p-4 flex flex-col items-start gap-2 flex-1"
                   >
                     <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
                       <v.icon className="w-4 h-4" />
                     </div>
-                    <p className="text-primary/70 text-xs font-semibold leading-snug pt-1">{v.text}</p>
+                    <p className="text-primary/70 text-xs font-semibold leading-snug">{v.text}</p>
                   </motion.div>
                 ))}
               </div>

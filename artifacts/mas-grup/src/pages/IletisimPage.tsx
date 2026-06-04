@@ -189,7 +189,7 @@ export default function IletisimPage() {
                 </svg>
                 <span className="text-[#25D366] font-bold text-xs tracking-wide">WhatsApp</span>
               </a>
-              <a href="#" className="w-11 h-11 border border-white/12 flex items-center justify-center hover:border-accent/50 hover:bg-white/5 transition-all duration-300">
+              <a href="https://www.instagram.com/masgrupcleaning" target="_blank" rel="noreferrer" className="w-11 h-11 border border-white/12 flex items-center justify-center hover:border-accent/50 hover:bg-white/5 transition-all duration-300">
                 <Instagram className="w-4 h-4 text-white/50" />
               </a>
             </div>

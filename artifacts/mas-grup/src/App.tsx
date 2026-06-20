@@ -17,10 +17,19 @@ import IletisimPage from "@/pages/IletisimPage";
 
 const queryClient = new QueryClient();
 
+declare function gtag(...args: unknown[]): void;
+
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    try {
+      gtag('event', 'conversion', {
+        send_to: 'AW-18257108319/EaRBCJaB0MIcEN-61YFE',
+        value: 1.0,
+        currency: 'TRY',
+      });
+    } catch {}
   }, [location]);
   return null;
 }

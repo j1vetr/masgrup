@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, ArrowRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2 } from "lucide-react";
+import { CheckCircle, Users, Shield, RefreshCw, Home, Building2, HardHat, Sparkles, Eye, ClipboardList, ZoomIn, CheckSquare, Check, ChevronRight, ArrowRight, Droplets, Star, Clock, Smile, CalendarDays, Leaf, Settings, Globe, UserCircle2, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import ana1 from "@assets/ana5_1780320877135.webp";
@@ -54,24 +54,56 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="font-black leading-[1.18] mb-4" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
-                <span className="text-white block">Eğitimli Ekip.</span>
-                <span className="text-white block">Premium Hizmet.</span>
-                <span className="block" style={{ color: "#0077B6" }}>Kurumsal Güven.</span>
+              {/* Güven rozeti */}
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-6 h-px bg-accent" />
+                <span className="text-accent text-[10px] font-black tracking-[0.32em] uppercase">İstanbul'un Temizlik Uzmanı</span>
+              </div>
+
+              <h1 className="font-black leading-[1.12] mb-4" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
+                <span className="text-white block">Eviniz ya da</span>
+                <span className="text-white block">ofisiniz için</span>
+                <span className="block text-accent">profesyonel temizlik.</span>
               </h1>
-              <p className="text-white/85 text-sm leading-relaxed mb-7" style={{ maxWidth: 380 }}>
-                Mas Grup, yaşam alanlarınızı ve iş yerlerinizi en yüksek hijyen standartlarında buluşturur.
+              <p className="text-white/75 text-sm leading-relaxed mb-3" style={{ maxWidth: 360 }}>
+                Ücretsiz keşif, şeffaf fiyat, eğitimli ekip. 7 yıldır güvenilir hizmet.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/hizmetlerimiz">
-                  <Button className="text-white font-bold tracking-wide text-sm px-5 h-10" style={{ backgroundColor: "#0077B6" }}>
-                    HİZMETLERİMİZ <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                  </Button>
+
+              {/* Sosyal kanıt */}
+              <div className="flex items-center gap-3 mb-7">
+                <div className="flex -space-x-2">
+                  {["bg-accent/80","bg-white/30","bg-accent/50"].map((c,i) => (
+                    <div key={i} className={`w-7 h-7 rounded-full border-2 border-[#050d1a] ${c} flex items-center justify-center text-white text-[9px] font-black`}>
+                      {["A","B","C"][i]}
+                    </div>
+                  ))}
+                </div>
+                <span className="text-white/55 text-xs">500+ mutlu müşteri</span>
+              </div>
+
+              {/* Ana CTA butonları */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <a href="https://wa.me/905336017622" target="_blank" rel="noreferrer"
+                  className="group flex items-center justify-center gap-2.5 px-6 h-12 font-black text-sm tracking-wide text-white transition-all duration-300"
+                  style={{ background: "#25D366" }}>
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp'tan Yaz
+                </a>
+                <a href="tel:+905336017622"
+                  className="group flex items-center justify-center gap-2.5 px-6 h-12 font-black text-sm tracking-wide text-white border border-white/25 hover:border-white/50 hover:bg-white/8 transition-all duration-300">
+                  <Phone className="w-4 h-4 text-accent" />
+                  0533 601 76 22
+                </a>
+              </div>
+
+              {/* İkincil linkler */}
+              <div className="flex items-center gap-4">
+                <Link href="/hizmetlerimiz" className="text-white/45 hover:text-white text-xs font-semibold tracking-wide transition-colors flex items-center gap-1">
+                  Hizmetlerimiz <ChevronRight className="w-3 h-3" />
                 </Link>
-                <Link href="/hakkimizda">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 font-bold tracking-wide text-sm px-5 h-10">
-                    BİZİ TANIYIN <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                  </Button>
+                <span className="w-px h-3 bg-white/15" />
+                <Link href="/iletisim" className="text-white/45 hover:text-white text-xs font-semibold tracking-wide transition-colors flex items-center gap-1">
+                  Ücretsiz Teklif Al <ChevronRight className="w-3 h-3" />
                 </Link>
               </div>
             </motion.div>
